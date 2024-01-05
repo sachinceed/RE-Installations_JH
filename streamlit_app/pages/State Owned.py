@@ -7,6 +7,8 @@ import plotly.express as px
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import json
+import fiona
+
 
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
