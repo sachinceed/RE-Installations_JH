@@ -89,6 +89,9 @@ sum_solar_pumps = filtered_dfall['Count_solar_pump_installed'].sum()
 sum_private_rooftop_installations = filtered_dfall['Privatesolar'].sum()
 sum_utility_Grade_Solar = filtered_dfall['SGM_Capacity'].sum()
 sum_privatesolar_counts=filtered_dfall['private_solar_count'].sum()
+sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolar','SGM_Capacity']].sum().sum()
+sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity']].sum().sum()
+
 
 
 # Display metrics
@@ -122,3 +125,17 @@ with col9:
 
 with col10:
     st.metric(label="Rooftop Solar Nos.", value=sum_privatesolar_counts)
+
+st.header('Total On-Grid Capacity')
+
+st.metric(label="Total On-Grid Capacity(kWp)", value=sum_ongrid_capacity)
+
+
+st.header('Total Off-Grid Capacity')
+
+st.metric(label="Total Off-Grid Capacity(kWp)", value=sum_offgrid_capacity)
+
+
+
+
+
