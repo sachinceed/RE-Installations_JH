@@ -138,7 +138,7 @@ st.header('Total Off-Grid Capacity')
 
 st.metric(label="", value=sum_offgrid_capacity)
 
-st.header('Total Solar Capacity')
+#st.header('Total Solar Capacity')
 #st.metric(label=" ", value= )
 
 
