@@ -5,7 +5,7 @@ import folium
 import json
 import branca.colormap as cm
 from streamlit_folium import folium_static
-from PIL import Image
+
 
 # Set Streamlit page title and header
 st.set_page_config(page_title='Decentralized Renewable Energy')
@@ -92,7 +92,7 @@ sum_privatesolar_counts=filtered_dfall['private_solar_count'].sum()
 sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolar','SGM_Capacity']].sum().sum()
 sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_street_Lights']].sum().sum()
 sum_solar_street_lights=filtered_dfall['Solar_street_Lights'].sum()
-
+sum_solar_SL_capacity=filtered_dfall['Solar_Streetlights_capacity'].sum()
 
 # Display metrics
 st.header('State Owned')
@@ -106,13 +106,15 @@ with col2:
 with col3:
     st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 
-col4, col5, col6 = st.columns(3)
+col4, col5, col6 , col7= st.columns(4)
 with col4:
     st.metric(label="Rooftop Solar Installations", value=sum_rooftop_installations)
 with col5:
     st.metric(label="Installed Minigrid Solar(No.)", value = sum_households)
 with col6:
     st.metric(label="Solar Street Lights No.", value = sum_solar_street_lights)
+with col7:
+    st.metric(label="Solar Street Lights Capacity", value = sum_solar_SL_capacity)    
 
 st.header('Private Owned')
 
