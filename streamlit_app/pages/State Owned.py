@@ -7,24 +7,6 @@ import plotly.express as px
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import json
-import fiona
-
-# Set SHAPE_RESTORE_SHX config option
-fiona.env['SHAPE_RESTORE_SHX'] = 'YES'
-
-# Specify the path to your shapefile
-polygon_shapefile = "streamlit_app/data/JHARKHAND_DISTRICT_BDY.shp"
-
-# Attempt to read the shapefile
-try:
-    polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
-    # Continue with your processing...
-except fiona.errors.DriverError as e:
-    # Handle the DriverError, print a message, or take corrective action
-    print(f"DriverError: {e}")
-    # Optionally, you can raise the exception again to propagate it further
-    raise
-
 
 
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
@@ -32,7 +14,7 @@ dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 with open(r'streamlit_app/JHARKHANDSHAPEFILEGJ.geojson') as f:
     geojson_data = json.load(f)
 
-polygon_shapefile = r"streamlit_app/data/JHARKHAND_DISTRICT_BDY.shp"
+polygon_shapefile = r"streamlit_app/data/jhnew.geojson"
 # Reading and converting to WGS84 CRS
 polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
 
