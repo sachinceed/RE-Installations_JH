@@ -77,7 +77,7 @@ dfall_sorted = dfall.sort_values(by='Count_solar_pump_installed')
 fig4 = px.bar(dfall_sorted, x='Count_solar_pump_installed', y='District', title='Solar Pump installations')
 # Update axes and layout
 fig4.update_yaxes(showticklabels=True, showgrid=True, zeroline=True, title_text='')
-fig4.update_xaxes(showticklabels=True, showgrid=False, zeroline=True, title_text="Total installed Solar Pump Counts")
+fig4.update_xaxes(showticklabels=True, showgrid=True, zeroline=True, title_text="Total installed Solar Pump Counts")
 fig4.update_layout(
     yaxis=dict(
         tickmode='linear',
