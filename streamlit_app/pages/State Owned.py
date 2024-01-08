@@ -11,7 +11,7 @@ import json
 
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
-with open(r'streamlit_app/JHARKHANDSHAPEFILEGJ.geojson') as f:
+with open(r"streamlit_app/data/jhnew.geojson") as f:
     geojson_data = json.load(f)
 
 polygon_shapefile = r"streamlit_app/data/jhnew.geojson"
