@@ -93,7 +93,7 @@ sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Insta
 sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_Streetlights_capacity']].sum().sum()
 sum_solar_street_lights=filtered_dfall['Solar_street_Lights'].sum()
 sum_solar_SL_capacity=filtered_dfall['Solar_Streetlights_capacity'].sum()
-
+total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
 st.header('State Owned')
 st.metric(label=' ', value=selected_district)
@@ -131,13 +131,15 @@ with col10:
 
 st.header('Total On-Grid Capacity')
 
-st.metric(label="Total On-Grid Capacity(kWp)", value=sum_ongrid_capacity)
+st.metric(label="", value=sum_ongrid_capacity)
 
 
 st.header('Total Off-Grid Capacity')
 
-st.metric(label="Total Off-Grid Capacity(kWp)", value=sum_offgrid_capacity)
+st.metric(label="", value=sum_offgrid_capacity)
 
+st.header('Total Solar Capacity')
+st.metric(label="", value= )
 
 
 
