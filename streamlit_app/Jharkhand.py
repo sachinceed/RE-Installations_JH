@@ -86,9 +86,9 @@ sum_sgmp_capacity = filtered_dfall['SGM_Capacity'].sum()
 sum_rooftop_capacity = filtered_dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].sum()
 sum_rooftop_installations = filtered_dfall['Total_Number_of_Building_solar_rooftop_grid_connected'].sum()
 sum_solar_pumps = filtered_dfall['Count_solar_pump_installed'].sum()
-sum_private_rooftop_installations = filtered_dfall['Privatesolar'].sum()
+sum_private_rooftop_installations = filtered_dfall['private_solar_total_count'].sum()
 sum_utility_Grade_Solar = filtered_dfall['SGM_Capacity'].sum()
-sum_privatesolar_counts=filtered_dfall['private_solar_count'].sum()
+sum_privatesolar_capacity=filtered_dfall['Privatesolartotalcapacity'].sum()
 sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolar',]].sum().sum()
 sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_Streetlights_capacity']].sum().sum()
 sum_solar_street_lights=filtered_dfall['Solar_street_Lights'].sum()
@@ -120,7 +120,7 @@ st.header('Private Owned')
 
 col7, col8, col9,col10 = st.columns(4)
 with col7:
-    st.metric(label="RooftopsolarCapacity(kWp)", value=sum_private_rooftop_installations)
+    st.metric(label="RooftopsolarCapacity(kWp)", value=)
 with col8:
     st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 with col9:
