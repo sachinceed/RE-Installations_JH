@@ -120,7 +120,7 @@ st.header('Private Owned')
 
 col7, col8, col9,col10 = st.columns(4)
 with col7:
-    st.metric(label="RooftopsolarCapacity(kWp)", value=)
+    st.metric(label="RooftopsolarCapacity(kWp)", value=sum_privatesolar_capacity)
 with col8:
     st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 with col9:
