@@ -9,6 +9,23 @@ from streamlit_folium import folium_static
 import json
 import fiona
 
+# Set SHAPE_RESTORE_SHX config option
+fiona.env['SHAPE_RESTORE_SHX'] = 'YES'
+
+# Specify the path to your shapefile
+polygon_shapefile = "streamlit_app/data/JHARKHAND_DISTRICT_BDY.shp"
+
+# Attempt to read the shapefile
+try:
+    polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
+    # Continue with your processing...
+except fiona.errors.DriverError as e:
+    # Handle the DriverError, print a message, or take corrective action
+    print(f"DriverError: {e}")
+    # Optionally, you can raise the exception again to propagate it further
+    raise
+
+
 
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
