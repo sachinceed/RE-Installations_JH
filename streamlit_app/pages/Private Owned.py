@@ -44,8 +44,8 @@ fig1 = px.bar(dfSRFY_sorted, y='District', x=['PRIVATE_SOLAR_ROOFTOP(19-20)','PR
              template='plotly_dark',
              width=800, height=500)
 
-fig1.update_xaxes(showgrid=True, gridcolor='rgba(255,255,255,0.1)', title_font=dict(weight='bold'))
-fig1.update_yaxes(showgrid=True, gridcolor='rgba(255,255,255,0.1)', title_font=dict(weight='bold'))
+fig1.update_xaxes(showgrid=True)
+fig1.update_yaxes(showgrid=True)
 fig1.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig1.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['District'], ticktext=dfSRFY_sorted['District'])
 #fig1.show()
