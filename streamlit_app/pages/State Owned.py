@@ -55,6 +55,8 @@ fig1 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', 
              template='plotly_dark',
              width=600, height=500)
 fig1.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+fig1.update_xaxes(showgrid=True)
+fig1.update_yaxes(showgrid=True)
 fig1.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
 #fig1.show()
 st.plotly_chart(fig1) 
@@ -70,6 +72,8 @@ fig2 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', 
              template='plotly_dark',
              width=600, height=500)
 fig2.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+fig2.update_xaxes(showgrid=True)
+fig2.update_yaxes(showgrid=True)
 fig2.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
 
 #fig2.show()
@@ -116,6 +120,8 @@ fig3 = px.bar(df_sorted1,
 fig3.update_xaxes(title_text='Capacity (kWp)')
 fig3.update_traces(texttemplate='%{text:.2s}(kWp)', textposition='inside')  # Adjust text formatting and position
 fig3.update_yaxes(showticklabels=True, showgrid=True, zeroline=True)
+fig3.update_xaxes(showgrid=True)
+fig3.update_yaxes(showgrid=True)
 st.plotly_chart(fig3)
 
 
@@ -140,7 +146,7 @@ folium_static(m,width=600,height=400)
 
 fig5 = px.bar(dfST, x='Total', y='Dist',color='Total', barmode='group', title='Solar Streetlight installations')
 fig5.update_yaxes(showticklabels=True, showgrid=True, zeroline=True,title_text='')
-fig5.update_xaxes(showticklabels=True,showgrid=False,zeroline=True,title_text="Total installed Streetlights")
+fig5.update_xaxes(showticklabels=True,showgrid=True,zeroline=True,title_text="Total installed Streetlights")
 fig5.update_layout(
     yaxis=dict(
         tickmode='linear',
