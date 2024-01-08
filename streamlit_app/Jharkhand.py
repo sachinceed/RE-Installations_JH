@@ -62,6 +62,7 @@ selected_district = st.sidebar.selectbox('Select a District to get all details o
 
 # Filter data based on selected district
 filtered_dfall = filter_data_by_district(selected_district)
+print(filtered_dfall)
 
 m = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=5, max_zoom=15, tiles='cartodb dark_matter', control_scale=True)
 folium.TileLayer('cartodbpositron', name='Light Map').add_to(m)  # Add light map layer
