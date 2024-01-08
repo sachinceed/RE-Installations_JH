@@ -110,7 +110,7 @@ col4, col5, col6 , col7= st.columns(4)
 with col4:
     st.metric(label="Rooftop Solar Installations", value=sum_rooftop_installations)
 with col5:
-    st.metric(label="Installed Minigrid Solar(No.)", value = sum_households)
+    st.metric(label="Installed Minigrid Solar No.", value = sum_households)
 with col6:
     st.metric(label="Solar Street Lights No.", value = sum_solar_street_lights)
 with col7:
@@ -122,12 +122,12 @@ col7, col8, col9,col10 = st.columns(4)
 with col7:
     st.metric(label="RooftopsolarCapacity(kWp)", value=sum_private_rooftop_installations)
 with col8:
-    st.metric(label="Solar Water Pumps", value=sum_solar_pumps)
+    st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 with col9:
     st.metric(label="Utility Grade Solar cap(kWp)", value=sum_utility_Grade_Solar)
 
 with col10:
-    st.metric(label="Rooftop Solar Nos.", value=sum_privatesolar_counts)
+    st.metric(label="Rooftop Solar No.", value=sum_privatesolar_counts)
 
 st.header('Total On-Grid Capacity')
 
