@@ -90,8 +90,8 @@ sum_private_rooftop_installations = filtered_dfall['Privatesolar'].sum()
 sum_utility_Grade_Solar = filtered_dfall['SGM_Capacity'].sum()
 sum_privatesolar_counts=filtered_dfall['private_solar_count'].sum()
 sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolar','SGM_Capacity']].sum().sum()
-sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity']].sum().sum()
-
+sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_street_Lights']].sum().sum()
+sum_solar_street_lights=filtered_dfall['Solar_street_Lights'].sum()
 
 
 # Display metrics
@@ -104,14 +104,15 @@ with col1:
 with col2:
     st.metric(label="Minigrid capacity(kWp)", value=sum_minigrid_capacity)
 with col3:
-    st.metric(label="Solar Water Pumps", value=sum_solar_pumps)
+    st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 
-col4, col5 = st.columns(2)
+col4, col5, col6 = st.columns(3)
 with col4:
     st.metric(label="Rooftop Solar Installations", value=sum_rooftop_installations)
 with col5:
     st.metric(label="Installed Minigrid Solar(No.)", value = sum_households)
-
+with col6:
+    st.metric(label="Solar Street Lights No.", value = sum_solar_street_lights)
 
 st.header('Private Owned')
 
