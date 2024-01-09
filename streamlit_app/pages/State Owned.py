@@ -161,7 +161,7 @@ dfSSL_sorted = dfSSL.sort_values(by='FY-20-21', ascending=True)
 fig12 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','FY-18-19','FY-19-20','FY-20-21'],
              title='Financial Year Wise Solar Streetlights Installations in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
-             #template='plotly_dark',
+             template='plotly_dark',
              width=800, height=600)
 fig12.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig12.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
