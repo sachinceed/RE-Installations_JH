@@ -162,10 +162,9 @@ fig12 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','
              title='Financial Year Wise Solar Streetlights Installations in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
-             width=900, height=600)
+             width=800, height=600)
 fig12.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig12.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
-fig12.tightlayout()
 st.plotly_chart(fig12) 
 
 
