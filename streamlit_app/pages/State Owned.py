@@ -155,6 +155,27 @@ fig5.update_layout(
 )
 st.plotly_chart(fig5) 
 
+dfSSL=pd.read_csv("streamlit_app/data/SSL compiled FY_cap.csv")
+#Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
+dfSSL_sorted = dfSSL.sort_values(by='FY-20-21', ascending=True)
+fig12 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','FY-18-19','FY-19-20','FY-20-21'],
+             title='Financial Year Wise Solar Streetlights Installations in Jharkhand',
+             labels={'value': 'Installation Counts','variable': 'Financial Years'},
+             template='plotly_dark',
+             width=600, height=500)
+fig12.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+fig12.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
+#fig1.show()
+st.plotly_chart(fig12) 
+
+
+
+
+
+
+
+
+
 st.title('Solar Rooftop Locations in the State of Jharkhand')
 st.subheader('Goverment Hospitals installed solar panels')
 # Load GeoJSON file
