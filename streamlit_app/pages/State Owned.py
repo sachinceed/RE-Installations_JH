@@ -165,33 +165,9 @@ fig12 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','
              width=900, height=600)
 fig12.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig12.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
-#fig1.show()
+fig12.tightlayout()
 st.plotly_chart(fig12) 
 
-
-# Create the bar chart
-fig12 = px.bar(
-    dfSSL_sorted,
-    y='District',
-    x=['FY-14-15', 'FY-15-16', 'FY-16-17', 'FY-18-19', 'FY-19-20', 'FY-20-21'],
-    title='Financial Year Wise Solar Streetlights Installations in Jharkhand',
-    labels={'value': 'Installation Counts', 'variable': 'Financial Years'},
-    template='plotly_dark',
-    width=900,
-    height=600
-)
-
-# Update layout to show all tick labels on the y-axis
-fig12.update_layout(
-    barmode='stack',
-    yaxis={'categoryorder': 'total ascending'},
-    yaxis_tickmode='array',
-    yaxis_tickvals=dfSSL_sorted.index,  # Use index as tick values
-    yaxis_ticktext=dfSSL_sorted['District'].tolist()  # Use District column as tick labels
-)
-
-# Show the plot
-st.plotly_chart(fig12)
 
 
 
