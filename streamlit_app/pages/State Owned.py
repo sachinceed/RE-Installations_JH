@@ -164,7 +164,7 @@ fig12 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','
              #template='plotly_dark',
              width=800, height=600)
 fig12.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
-fig12.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
+fig12.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
 st.plotly_chart(fig12) 
 
 
