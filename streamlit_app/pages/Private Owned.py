@@ -91,6 +91,21 @@ fig4.update_layout(
 # Display the chart using Streamlit
 st.plotly_chart(fig4)
 
+dfSSL=pd.read_csv(r'C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Solar_Water_Pumps.csv')
+#Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
+dfSSL_sorted = dfSSL.sort_values(by='2021-22', ascending=True)
+fig3 = px.bar(dfSSL_sorted, y='District', x=['2016-17','2018-19','2019-20_&_2020-21','2021-22'],
+             title='Financial Year Wise Solar Pump Installations in Jharkhand',
+             labels={'value': 'Installation Counts','variable': 'Financial Years'},
+             template='plotly_dark',
+             width=700, height=500)
+fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+fig3.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
+#fig1.show()
+st.plotly_chart(fig3) 
+
+
+
 #st.header('Utlity grade (Ground Mounted) = PROJECT ONGOING')
 
 
