@@ -91,10 +91,10 @@ fig4.update_layout(
 # Display the chart using Streamlit
 st.plotly_chart(fig4)
 
-dfSSL=pd.read_csv(r'C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Solar_Water_Pumps.csv')
+dfSSL=pd.read_csv(r'streamlit_app/data/Solar_Water_Pumps.csv')
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSSL_sorted = dfSSL.sort_values(by='2021-22', ascending=True)
-fig3 = px.bar(dfSSL_sorted, y='District', x=['2016-17','2018-19','2019-20_&_2020-21','2021-22'],
+fig3 = px.bar(dfSSL_sorted, y='District', x=['Nos._of_SWPs_Installed_2016-17','Nos._of_SWPs_Installed_2018-19','Nos._of_SWPs_Installed_2019-20_&_2020-21_(PM-KUSUM_Phase_I)','Nos._of_SWPs_Installed_2021-22_(PM-KUSUM Phase_II)'],
              title='Financial Year Wise Solar Pump Installations in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
