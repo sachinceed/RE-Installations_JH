@@ -14,7 +14,7 @@ dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 with open(r'streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
 
-polygon_shapefile = r"streamlit_app/data/JHARKHAND_DISTRICT_BDY.shp"
+polygon_shapefile = r'streamlit_app/data/jhnew.geojson'
 # Reading and converting to WGS84 CRS
 polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
 
