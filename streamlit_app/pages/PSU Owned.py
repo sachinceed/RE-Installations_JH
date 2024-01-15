@@ -30,7 +30,7 @@ m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='cartodb dark_ma
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
-    tooltip=folium.GeoJsonTooltip(fields=['dtname','DVC_owned_Solar(kwp)'], aliases=['District:','INSTALLED CAPACITY (kwp) BY DVC'])
+    tooltip=folium.GeoJsonTooltip(fields=['dtname','DVC_solar'], aliases=['District:','INSTALLED CAPACITY (kwp) BY DVC'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
