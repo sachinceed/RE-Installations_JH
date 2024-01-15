@@ -88,7 +88,7 @@ st.plotly_chart(fig2)
 st.header('MINI-GRID SOLAR')
 # Read the CSV data
 
-df4mgs=pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Solar_Minigrid.csv")
+df4mgs=pd.read_csv(r"streamlit_app/data/Solar_Minigrid.csv")
 # Function to customize tooltip
 color_scale = linear.BrBG_11.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
 def style_function(feature):
@@ -156,7 +156,7 @@ fig5.update_layout(
 )
 st.plotly_chart(fig5) 
 
-dfSSL=pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\SSL compiled FY_cap.csv")
+dfSSL=pd.read_csv(r"streamlit_app/data/SSL compiled FY_cap.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSSL_sorted = dfSSL.sort_values(by='FY-20-21', ascending=True)
 fig1 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','FY-18-19','FY-19-20','FY-20-21'],
@@ -195,7 +195,7 @@ st.plotly_chart(fig1)
 st.title('Solar Rooftop Locations in the State of Jharkhand')
 st.subheader('Goverment Hospitals installed solar panels')
 # Load GeoJSON file
-geojson_file = r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Hospitals.geojson"
+geojson_file = r"streamlit_app/data/Hospitals.geojson"
 gdf = gpd.read_file(geojson_file)
 
 # Ensure the 'Category' column is treated as categorical
@@ -221,9 +221,7 @@ for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
     
     # Customize the icon size (adjust the icon_size parameter)
-    icon_size = (2,2)  # Change the size according to your preference
-    icon = folium.CustomIcon(icon_image=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\icon.png", icon_size=(30, 30), icon_anchor=(15, 15), popup_anchor=(0, -15))
-    folium.Marker(
+        folium.Marker(
         location=[row.geometry.centroid.y, row.geometry.centroid.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'yellow',icon='star',prefix='fa',icon_color='white')
@@ -244,7 +242,7 @@ folium_static(m, width=700, height=500)
 st.subheader('Goverment Educational Institutions installed solar panels')
 
 # Load GeoJSON file
-geojson_file = r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Educational_Instutions.geojson"
+geojson_file = r"streamlit_app/data/Educational_Instutions.geojson"
 gdf = gpd.read_file(geojson_file)
 # Ensure the 'Category' column is treated as categorical
 gdf['Category'] = gdf['Category'].astype('str')
@@ -287,7 +285,7 @@ folium_static(m, width=700, height=500)
 
 st.subheader('District Court Buildings installed solar panels')
 
-geojson_file =(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\courts.geojson")
+geojson_file =(r"streamlit_app/data/courts.geojson")
 
 gdf = gpd.read_file(geojson_file)
 
@@ -333,7 +331,7 @@ folium_static(m, width=700, height=500)
 
 
 st.subheader('Goverment Buildings installed solar panels')
-geojson_file =r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Govt_buildings.geojson"
+geojson_file =r"streamlit_app/data/Govt_buildings.geojson"
 gdf = gpd.read_file(geojson_file)
 
 # Ensure the 'Category' column is treated as categorical
@@ -393,7 +391,7 @@ folium_static(m, width=700, height=500)
 
 st.subheader('Police Station installed solar panels')
 
-geojson_file =r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\Police stations.geojson"
+geojson_file =r"streamlit_app/data/Police stations.geojson"
 gdf = gpd.read_file(geojson_file)
 
 # Ensure the 'Category' column is treated as categorical
