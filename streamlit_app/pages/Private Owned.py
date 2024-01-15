@@ -56,10 +56,10 @@ st.plotly_chart(fig1)
 
 
 st.header('SOLAR PUMPS')
-
+color_scale = linear.BrBG_11.scale(dfall['State_Solarpump_counts'].min(), dfall['State_Solarpump_counts'].max())
 def style_function(feature):
     return {
-        'fillColor': '#10ef3b',
+        'fillColor': color_scale(feature['properties']['State_Solarpump_counts']),
         'color': 'white',
         'weight':2,
         'dashArray': '4, 4',
@@ -72,6 +72,10 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solarpump_counts'], aliases=['District:','Solar Pumps Count:'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
+
+color_scale.caption = 'Installed Counts'
+color_scale.add_to(m)
+
 folium_static(m,width=600,height=400)
 #dfall = dfall.sort_values(b ascending=True)
 
