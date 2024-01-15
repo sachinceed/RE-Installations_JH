@@ -18,7 +18,7 @@ dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 # Function to customize tooltip
 def style_function(feature):
     return {
-        'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR(19-20)']),
+        'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR_ROOFTOP']),
         'color': 'white',
         'weight':2,
         'dashArray': '4, 4',
