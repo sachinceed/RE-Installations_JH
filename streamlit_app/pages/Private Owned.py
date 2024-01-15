@@ -18,7 +18,7 @@ dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 # Function to customize tooltip
 def style_function(feature):
     return {
-        'fillColor': '#10ef3b',
+        'fillColor':color_scale(feature['properties']['Privatesolartotalcapacity']),
         'color': 'white',
         'weight':2,
         'dashArray': '4, 4',
@@ -30,6 +30,8 @@ folium.GeoJson(
     style_function=style_function,
     tooltip=folium.GeoJsonTooltip(fields=['dtname','PRIVATE_SOLAR(19-20)','PRIVATE_SOLAR_ROOFTOP'], aliases=['District:','PRIVATE INSTALLATIONS SOLAR ROOFTOP(19-20)','PRIVATE INSTALLATIONS SOLAR ROOFTOP(20-21)'])
 ).add_to(m)
+color_scale.caption = 'Installed Capacity (kwp)'
+color_scale.add_to(m)
 folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
 
