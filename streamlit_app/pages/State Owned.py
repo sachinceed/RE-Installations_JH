@@ -8,13 +8,13 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import json
 from branca.colormap import linear
-dfall = pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\All_Total.csv")
-dfST=pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\SSL compiled report.csv")
+dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
+dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
-with open(r"C:\Users\sachi\OneDrive\Desktop\webapp\data\JHARKHANDSHAPEFILEGJ.geojson") as f:
+with open(r'streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
 
-polygon_shapefile = r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\private owned solar rooftop\JHARKHAND_DISTRICT_BDY.shp"
+polygon_shapefile = r"streamlit_app/data/JHARKHAND_DISTRICT_BDY.shp"
 # Reading and converting to WGS84 CRS
 polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
 
@@ -52,7 +52,7 @@ color_scale.add_to(m)
 folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
 
-dfSRFY=pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\FY_GSR_insatllations.csv")
+dfSRFY=pd.read_csv(r"streamlit_app/data/FY_GSR_insatllations.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSRFY_sorted = dfSRFY.sort_values(by='2022-23', ascending=True)
 fig1 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23'],
