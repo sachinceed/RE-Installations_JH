@@ -37,7 +37,7 @@ folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
 
 
-
+st.subheader('colour Gradient Map')
 
 
 # Function to customize tooltip
