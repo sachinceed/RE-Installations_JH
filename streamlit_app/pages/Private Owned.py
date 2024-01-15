@@ -7,6 +7,8 @@ import plotly.express as px
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import json
+from branca.colormap import linear
+
 
 st.subheader('ROOFTOP SOLAR')
 
