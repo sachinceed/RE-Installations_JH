@@ -16,9 +16,11 @@ with open(r'streamlit_app/data/jhnew.geojson') as f:
 dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 
 # Function to customize tooltip
+color_scale = linear.BrBG_11.scale(dfall['Privatesolartotalcapacity'].min(), dfall['Privatesolartotalcapacity'].max())
+def style_function(feature):
 def style_function(feature):
     return {
-        'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR_ROOFTOP']),
+        'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR(19-20)']),
         'color': 'white',
         'weight':2,
         'dashArray': '4, 4',
