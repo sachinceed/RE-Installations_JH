@@ -59,7 +59,7 @@ st.plotly_chart(fig1)
 
 
 st.header('SOLAR PUMPS')
-color_scale = linear.BrBG_11.scale(dfall['State_Solarpump_counts'].min(), dfall['State_Solarpump_counts'].max())
+color_scale = linear.BrBG_11.scale(dfall['Count_solar_pump_installed'].min(), dfall['Count_solar_pump_installed'].max())
 def style_function(feature):
     return {
         'fillColor': color_scale(feature['properties']['State_Solarpump_counts']),
