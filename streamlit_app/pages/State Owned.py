@@ -67,7 +67,7 @@ st.plotly_chart(fig1)
 
 
 
-dfGSRCAP=pd.read_csv(r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\FY_GSR_Capacity.csv")
+dfGSRCAP=pd.read_csv(r"streamlit_app/data/FY_GSR_Capacity.csv")
 #Grid Connected Solar Rooftop Capacity in Jharkhand
 dfGSRCAP_sorted = dfGSRCAP.sort_values(by='2022-23', ascending=True)
 fig2 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23'],
