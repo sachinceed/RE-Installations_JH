@@ -219,9 +219,7 @@ def style_function(feature):
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
-    
-    # Customize the icon size (adjust the icon_size parameter)
-        folium.Marker(
+    folium.Marker(
         location=[row.geometry.centroid.y, row.geometry.centroid.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'yellow',icon='star',prefix='fa',icon_color='white')
