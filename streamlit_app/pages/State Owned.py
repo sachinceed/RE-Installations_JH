@@ -42,7 +42,7 @@ m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='cartodb dark_ma
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
-    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solar_Capacity','State_Solar_Counts',], aliases=['District:','Grid Connected Rooftop Solar capacity:','Grid Connected Rooftop Solar count:'])
+    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solar_Capacity','State_Solar_Counts',], aliases=['District:','Grid Connected Rooftop Solar capacity(kWp):','Grid Connected Rooftop Solar count:'])
 
 ).add_to(m)
 # Add color scale legend with white fonts
@@ -103,7 +103,7 @@ m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='cartodb dark_ma
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
-    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_SolarGrid_mini_plant','State_solarMinigrid_Plant_capacity'], aliases=['District:','Solar Minigrids count:','Solar Minigrids capacity:'])
+    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_SolarGrid_mini_plant','State_solarMinigrid_Plant_capacity'], aliases=['District:','Solar Minigrids count:','Solar Minigrids capacity(kWp):'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
