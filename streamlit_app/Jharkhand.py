@@ -76,7 +76,7 @@ folium.GeoJson(
 # Lock the zoom level
 m.options['scrollWheelZoom'] = False
 
-#folium.LayerControl().add_to(m)
+folium.LayerControl().add_to(m)
 
 folium_static(m, width=700, height=500)
 
