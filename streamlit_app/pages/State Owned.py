@@ -31,7 +31,7 @@ st.header('ROOFTOP SOLAR')
 color_scale = linear.BrBG_11.scale(dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].min(), dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].max())
 def style_function(feature):
     return {
-        'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR(19-20)']),
+        'fillColor':color_scale(feature['properties']['State_Solar_Capacity']),
         'color': 'white',
         'weight': 2,
         'dashArray': '4, 4',
