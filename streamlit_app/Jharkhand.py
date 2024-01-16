@@ -107,13 +107,13 @@ st.header('Private Owned')
 
 col8, col9, col10,col11 = st.columns(4)
 with col8:
-    st.metric(label="RooftopsolarCapacity(kWp)", value=sum_privatesolar_capacity)
+    st.metric(label="Rooftop Solar Capacity(kWp)", value=sum_privatesolar_capacity)
 with col9:
-    st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
-with col10:
-    st.metric(label="Utility Grade Solar cap(kWp)", value=sum_utility_Grade_Solar)
-with col11:
     st.metric(label="Rooftop Solar No.", value=sum_private_rooftop_installations)
+with col10:
+    st.metric(label="Utility-Grade capacity(kWp)", value=sum_utility_Grade_Solar)
+with col11:
+    st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 
 st.header('Total On-Grid Capacity')
 
