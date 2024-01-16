@@ -40,7 +40,7 @@ def style_function(feature):
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=5, max_zoom=15, tiles='CartoDB Positron', control_scale=True)
 
 folium.GeoJson(
     geojson_data,
