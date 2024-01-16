@@ -84,7 +84,7 @@ folium_static(m,width=600,height=400)
 #dfall = dfall.sort_values(b ascending=True)
 
 dfall_sorted = dfall.sort_values(by='Count_solar_pump_installed')
-fig4 = px.bar(dfall_sorted, x='Count_solar_pump_installed', y='District', title='Solar Pump installations')
+fig4 = px.bar(dfall_sorted, x='Count_solar_pump_installed', y='District', title='Solar Pump Installation Nos.')
 # Update axes and layout
 fig4.update_yaxes(showticklabels=True, showgrid=True, zeroline=True, title_text='')
 fig4.update_xaxes(showticklabels=True, showgrid=True, zeroline=True, title_text="Total installed Solar Pump Counts")
