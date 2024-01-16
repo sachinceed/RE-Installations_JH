@@ -252,7 +252,7 @@ folium_static(m, width=700, height=500)
 
 
 
-st.subheader('District Courts Buildings')
+st.subheader('District Courts')
 
 geojson_file =(r"streamlit_app/data/courts.geojson")
 
