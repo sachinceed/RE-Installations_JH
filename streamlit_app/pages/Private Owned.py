@@ -83,29 +83,12 @@ color_scale.add_to(m)
 folium_static(m,width=600,height=400)
 #dfall = dfall.sort_values(b ascending=True)
 
-dfall_sorted = dfall.sort_values(by='Count_solar_pump_installed')
-fig4 = px.bar(dfall_sorted, x='Count_solar_pump_installed', y='District', title='Solar Pump Installation Nos.')
-# Update axes and layout
-fig4.update_yaxes(showticklabels=True, showgrid=True, zeroline=True, title_text='')
-fig4.update_xaxes(showticklabels=True, showgrid=True, zeroline=True, title_text="Total installed Solar Pump Counts")
-fig4.update_layout(
-    yaxis=dict(
-        tickmode='linear',
-        dtick=1
-    ),
-    xaxis=dict(
-        categoryorder='total ascending'  # Sort x-axis categories in ascending order
-    )
-)
-
-# Display the chart using Streamlit
-st.plotly_chart(fig4)
 
 dfSSL=pd.read_csv(r'streamlit_app/data/Solar_Water_Pumps.csv')
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSSL_sorted = dfSSL.sort_values(by='2021-22', ascending=True)
 fig3 = px.bar(dfSSL_sorted, y='District', x=['2016-17','2018-19','2019-20_&_2020-21','2021-22',],
-             title='Financial Year Wise Solar Pump Installations in Jharkhand',
+             title='Solar Pump Installations in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
              width=700, height=500)
