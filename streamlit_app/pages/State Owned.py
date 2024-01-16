@@ -8,6 +8,8 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import json
 from branca.colormap import linear
+
+
 dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
@@ -22,11 +24,11 @@ st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 
 
-st.header('RENEWABLE ENERGY INSTALLATIONS COUNT AND CAPACITY IN GOVERMENT BUILDINGS (STATE OWNED)')
+st.header('RENEWABLE ENERGY INSTALLATIONS IN JHARKHAND')
 
 # Streamlit app
 #st.title('Jharkhand Map')
-st.subheader('Hover over the districts for more information on Total Grid Connected Solar Rooftop Installations in Jharkhand')
+st.subheader('Hover Over The Districts for More Information for RE Status in Jharkhand')
 st.header('ROOFTOP SOLAR')
 # Function to customize tooltip
 color_scale = linear.BrBG_11.scale(dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].min(), dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].max())
@@ -57,7 +59,7 @@ dfSRFY=pd.read_csv(r"streamlit_app/data/FY_GSR_insatllations.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSRFY_sorted = dfSRFY.sort_values(by='2022-23', ascending=True)
 fig1 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23'],
-             title='Financial Year Wise Grid interactive Solar Rooftop Installations in Jharkhand',
+             title='Grid interactive Solar Rooftop Installation Nos. in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
              width=600, height=500)
@@ -72,8 +74,8 @@ dfGSRCAP=pd.read_csv(r"streamlit_app/data/FY_GSR_Capacity.csv")
 #Grid Connected Solar Rooftop Capacity in Jharkhand
 dfGSRCAP_sorted = dfGSRCAP.sort_values(by='2022-23', ascending=True)
 fig2 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23'],
-             title='Financial Year Wise Installed Grid interactive Solar Rooftop Capacity in Jharkhand',
-             labels={'value': 'Innstalled Capacity(kWp)','variable': 'Financial Years'},
+             title='Grid interactive Solar Rooftop Capacity(kWp) in Jharkhand',
+             labels={'value': 'Installed Capacity(kWp)','variable': 'Financial Years'},
              template='plotly_dark',
              width=600, height=500)
 fig2.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
@@ -116,7 +118,7 @@ fig3 = px.bar(df_sorted1,
               x='Minigrid_Capacity(kWp)', 
               text='Minigrid_Capacity(kWp)',  # Add this line for values in bar labels
               barmode='group', 
-              title='Installed Minigrid Capacity(kWp)',
+              title='Minigrid Capacity(kWp)',
               labels={'Minigrid_Capacity(kWp)': 'Capacity (kWp)'},
               template='plotly_dark',
               width=600, height=500)
@@ -146,22 +148,12 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 folium_static(m,width=600,height=400)
 
-fig5 = px.bar(dfST, x='Total', y='Dist',color='Total', barmode='group', title='Solar Streetlight installations')
-fig5.update_yaxes(showticklabels=True, showgrid=True, zeroline=True,title_text='')
-fig5.update_xaxes(showticklabels=True,showgrid=False,zeroline=True,title_text="Total installed Streetlights")
-fig5.update_layout(
-    yaxis=dict(
-        tickmode='linear',
-        dtick=1
-    )
-)
-st.plotly_chart(fig5) 
-
+#'Solar Streetlights Installation (Nos.) in Jharkhand
 dfSSL=pd.read_csv(r"streamlit_app/data/SSL compiled FY_cap.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSSL_sorted = dfSSL.sort_values(by='FY-20-21', ascending=True)
 fig1 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','FY-18-19','FY-19-20','FY-20-21'],
-             title='Financial Year Wise Solar Streetlights Installations in Jharkhand',
+             title='Solar Streetlights Installation (Nos.) in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
              width=700, height=500)
@@ -171,30 +163,8 @@ fig1.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=
 st.plotly_chart(fig1) 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 st.title('Solar Rooftop Locations in the State of Jharkhand')
-st.subheader('Goverment Hospitals installed solar panels')
+st.subheader('Goverment Hospitals')
 # Load GeoJSON file
 geojson_file = r"streamlit_app/data/Hospitals.geojson"
 gdf = gpd.read_file(geojson_file)
@@ -238,7 +208,7 @@ folium_static(m, width=700, height=500)
 
 
 
-st.subheader('Goverment Educational Institutions installed solar panels')
+st.subheader('Educational Institutions')
 
 # Load GeoJSON file
 geojson_file = r"streamlit_app/data/Educational_Instutions.geojson"
@@ -282,7 +252,7 @@ folium_static(m, width=700, height=500)
 
 
 
-st.subheader('District Court Buildings installed solar panels')
+st.subheader('District Courts Buildings')
 
 geojson_file =(r"streamlit_app/data/courts.geojson")
 
@@ -325,63 +295,6 @@ for idx, row in gdf.iterrows():
 folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
 folium_static(m, width=700, height=500)
-
-
-
-
-st.subheader('Goverment Buildings installed solar panels')
-geojson_file =r"streamlit_app/data/Govt_buildings.geojson"
-gdf = gpd.read_file(geojson_file)
-
-# Ensure the 'Category' column is treated as categorical
-gdf['Category'] = gdf['Category'].astype('str')
-
-# Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
-
-# Function to customize tooltip
-def style_function(feature):
-    return {
-        'fillColor': '#10ef3b',
-        'color': 'Black',
-        'weight': 2,
-        'dashArray': '4, 4',
-        'fillOpacity': 0.4,
-    }
-
-# Add GeoJSON layer
-folium.GeoJson(
-    polygon_data,
-    name='Jharkhand Districts',
-).add_to(m)
-
-# Iterate through GeoDataFrame rows and add markers
-for idx, row in gdf.iterrows():
-    popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
-    
-    # Customize the icon size (adjust the icon_size parameter)
-    #icon=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\police logo.png"
-    icon_size = ()  # Change the size according to your preference
-    folium.Marker(
-        location=[row.geometry.y, row.geometry.x],
-        popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
-    ).add_to(m)
-folium.LayerControl().add_to(m)
-# Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -431,9 +344,52 @@ folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
 folium_static(m, width=700, height=500)
 
+st.subheader('Other Goverment Buildings')
+geojson_file =r"streamlit_app/data/Govt_buildings.geojson"
+gdf = gpd.read_file(geojson_file)
+
+# Ensure the 'Category' column is treated as categorical
+gdf['Category'] = gdf['Category'].astype('str')
+
+# Create a Folium map centered at the mean of the coordinates
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
+
+# Function to customize tooltip
+def style_function(feature):
+    return {
+        'fillColor': '#10ef3b',
+        'color': 'Black',
+        'weight': 2,
+        'dashArray': '4, 4',
+        'fillOpacity': 0.4,
+    }
+
+# Add GeoJSON layer
+folium.GeoJson(
+    polygon_data,
+    name='Jharkhand Districts',
+).add_to(m)
+
+# Iterate through GeoDataFrame rows and add markers
+for idx, row in gdf.iterrows():
+    popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
+    
+    # Customize the icon size (adjust the icon_size parameter)
+    #icon=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\police logo.png"
+    icon_size = ()  # Change the size according to your preference
+    folium.Marker(
+        location=[row.geometry.y, row.geometry.x],
+        popup=folium.Popup(popup_text, parse_html=True),
+        icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
+    ).add_to(m)
+folium.LayerControl().add_to(m)
+# Display the Folium map using folium_static
+folium_static(m, width=700, height=500)
+
+
 #st.header('Utlity grade (Ground Mounted) = PROJECT ONGOING')
-st.header('Utility grade (Floating Solar) = PROJECT ONGOING' )
-st.header('Utility grade (Canal Top Solar) =  WORK UNDER PROGRESS')
+st.header('Utility grade (Floating Solar) - PROJECT ONGOING' )
+st.header('Utility grade (Canal Top Solar) - WORK IN PROGRESS')
 
 
 
