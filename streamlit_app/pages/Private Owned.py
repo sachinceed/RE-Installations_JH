@@ -148,7 +148,9 @@ fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              labels={'value': 'Capacity(kWp)','variable': 'Districts'},
              template='plotly_dark',
              width=700, height=500)
+fig3.update_yaxes(tickmode='array', tickvals=dfSGM_sorted['District'], ticktext=dfSGM_sorted['District'])
 st.plotly_chart(fig4) 
+
 
 
 
