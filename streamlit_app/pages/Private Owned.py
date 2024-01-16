@@ -65,7 +65,7 @@ def style_function(feature):
     return {
         'fillColor': color_scale(feature['properties']['State_Solarpump_counts']),
         'color': 'black',
-        'weight':0,5,
+        'weight':0.5,
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
     }
