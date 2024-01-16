@@ -121,7 +121,7 @@ st.header('Ground Mounted (Utility Grade Solar)')
 color_scale = linear.Greens_09.scale(dfall['SGM_Capacity'].min(), dfall['SGM_Capacity'].max())
 def style_function(feature):
     return {
-        'fillColor': color_scale(feature['properties']['SGM_capacity']),
+        'fillColor': color_scale(feature['properties']['SGM_Capacity']),
         'color': 'black',
         'weight':0.5,
         'dashArray': '4, 4',
