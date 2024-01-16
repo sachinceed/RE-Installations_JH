@@ -35,7 +35,7 @@ color_scale = linear.Greens_09.scale(dfall['Grid_Connected_Rooftop_Solar_Capacit
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_Solar_Capacity']),
-        'color': 'white',
+        'color': 'black',
         'weight': 2,
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
