@@ -147,7 +147,7 @@ fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              title='Solar Ground Mounted Capacity(kWp)',
              template='plotly_dark',
              width=700, height=500)
-fig3.update_yaxes(tickmode='array', tickvals=dfSGM_sorted['District'], ticktext=dfSGM_sorted['District'])
+#fig3.update_yaxes(tickmode='array', tickvals=dfSGM_sorted['District'], ticktext=dfSGM_sorted['District'])
 fig3.update_xaxes(ticktext='Capacity(kWp)')
 st.plotly_chart(fig4) 
 
