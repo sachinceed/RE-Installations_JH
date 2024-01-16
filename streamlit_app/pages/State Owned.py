@@ -130,7 +130,7 @@ st.plotly_chart(fig3)
 
 
 st.header('SOLAR STREET LIGHTS ')
-color_scale = linear.Cividis_09.scale(dfall['Solar_Streetlights'].min(), dfall['Solar_Streetlights'].max())
+color_scale = linear.Greens_09.scale(dfall['Solar_Streetlights'].min(), dfall['Solar_Streetlights'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['Solar_streetlights_Count']),
