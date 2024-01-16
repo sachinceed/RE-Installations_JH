@@ -40,7 +40,7 @@ def style_function(feature):
         'dashArray': '4, 4',
         'fillOpacity': 0.7,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='OpenStreetMap',min_zoom =7,max_zoom=7)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='Stamen Watercolor',min_zoom =7,max_zoom=7)
 
 folium.GeoJson(
     geojson_data,
