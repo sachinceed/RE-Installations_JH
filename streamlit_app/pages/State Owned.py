@@ -93,7 +93,7 @@ st.header('MINI-GRID SOLAR')
 
 df4mgs=pd.read_csv(r"streamlit_app/data/Solar_Minigrid.csv")
 # Function to customize tooltip
-color_scale = linear.Viridis_09.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
+color_scale = linear.Greens_09.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_solarMinigrid_Plant_capacity']),
