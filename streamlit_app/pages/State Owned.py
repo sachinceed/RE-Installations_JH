@@ -38,7 +38,7 @@ def style_function(feature):
         'color': 'white',
         'weight': 2,
         'dashArray': '4, 4',
-        'fillOpacity': 0.9,
+        'fillOpacity': 1.5,
     }
 m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
 
