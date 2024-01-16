@@ -117,12 +117,12 @@ with col11:
 
 st.header('Total On-Grid Capacity (kWp)')
 
-st.metric(label="", value=f"{sum_ongrid_capacity} kWp")
+st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
 
 
 st.header('Total Off-Grid Capacity (kWp)')
 
-st.metric(label="", value=f"{sum_offgrid_capacity} kWp")
+st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
 
 #st.header('Total Solar Capacity')
 #st.metric(label=" ", value= )
