@@ -147,6 +147,13 @@ fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              title='Solar Ground Mounted Capacity(kWp)',
              template='plotly_dark',
              width=700, height=700)
+
+fig4.update_layout(
+    xaxis_title='Capacity (kWp)',
+    xaxis=dict(showgrid=True),
+    yaxis=dict(showgrid=True)
+)
+
 st.plotly_chart(fig4) 
 
 
