@@ -141,7 +141,7 @@ color_scale.add_to(m)
 folium_static(m,width=600,height=400)
 
 # Create a pie chart using Plotly Express
-fig = px.pie(dfall, values='SGM_Capacity', names='District', title='Solar Ground Mounted Capacity(kWp)')
+fig = px.bar(dfall, values='SGM_Capacity', names='District', title='Solar Ground Mounted Capacity(kWp)')
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig)
