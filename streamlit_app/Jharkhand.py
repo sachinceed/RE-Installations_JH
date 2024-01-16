@@ -28,7 +28,7 @@ def style_function(feature):
         'color': 'Black',
         'weight': 2,
         'dashArray': '4, 4',
-        'fillOpacity': 0.8,
+        'fillOpacity': 0.7,
     }
 
 # Function to filter data based on selected district
