@@ -115,12 +115,12 @@ with col10:
 with col11:
     st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 
-st.header('Total On-Grid Capacity')
+st.header('Total On-Grid Capacity (kWp)')
 
 st.metric(label="", value=f"{sum_ongrid_capacity} kWp")
 
 
-st.header('Total Off-Grid Capacity')
+st.header('Total Off-Grid Capacity (kWp)')
 
 st.metric(label="", value=f"{sum_offgrid_capacity} kWp")
 
