@@ -95,11 +95,11 @@ with col4:
 col5, col6, col7 = st.columns(3)
 
 with col5:
-    st.metric(label="Rooftop Solar Capacity (kWp)", value=f"{sum_rooftop_capacity} kWp")
+    st.metric(label="Rooftop Solar Capacity ", value=f"{sum_rooftop_capacity} kWp")
 with col6:
-    st.metric(label="Minigrid capacity(kWp)", value=f"{sum_minigrid_capacity} kWp")
+    st.metric(label="Minigrid capacity", value=f"{sum_minigrid_capacity} kWp")
 with col7:
-    st.metric(label="Solar Street Lights Capacity(kWp)", value = f"{sum_solar_SL_capacity} kWp")   
+    st.metric(label="Solar Street Lights Capacity", value = f"{sum_solar_SL_capacity} kWp")   
 
 
 
