@@ -19,16 +19,16 @@ with open(r'streamlit_app/data/jhnew.geojson') as f:
 dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 
 # Function to customize tooltip
-color_scale = linear.BrBG_11.scale(dfall['Privatesolartotalcapacity'].min(), dfall['Privatesolartotalcapacity'].max())
+color_scale = linear.Greens_09.scale(dfall['Privatesolartotalcapacity'].min(), dfall['Privatesolartotalcapacity'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['PRIVATE_SOLAR(19-20)']),
-        'color': 'white',
-        'weight':2,
+        'color': 'black',
+        'weight':0.5,
         'dashArray': '4, 4',
-        'fillOpacity': 0.7,
+        'fillOpacity': 3.0,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='cartodb dark_matter',min_zoom =7,max_zoom=7)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
@@ -60,16 +60,16 @@ st.plotly_chart(fig1)
 
 
 st.header('SOLAR PUMPS')
-color_scale = linear.BrBG_11.scale(dfall['Count_solar_pump_installed'].min(), dfall['Count_solar_pump_installed'].max())
+color_scale = linear.Greens_09.scale(dfall['Count_solar_pump_installed'].min(), dfall['Count_solar_pump_installed'].max())
 def style_function(feature):
     return {
         'fillColor': color_scale(feature['properties']['State_Solarpump_counts']),
-        'color': 'white',
-        'weight':2,
+        'color': 'black',
+        'weight':0,5,
         'dashArray': '4, 4',
-        'fillOpacity': 0.7,
+        'fillOpacity': 3.0,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=6, tiles='cartodb dark_matter',min_zoom =7,max_zoom=7)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=6, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
