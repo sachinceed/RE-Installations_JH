@@ -97,10 +97,10 @@ color_scale = linear.Greens_09.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_solarMinigrid_Plant_capacity']),
-        'color': 'white',
-        'weight':2,
+        'color': 'black',
+        'weight':0.5,
         'dashArray': '4, 4',
-        'fillOpacity': 0.7,
+        'fillOpacity': 3.0,
     }
 m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
 folium.GeoJson(
@@ -134,10 +134,10 @@ color_scale = linear.Greens_09.scale(dfall['Solar_Streetlights'].min(), dfall['S
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['Solar_streetlights_Count']),
-        'color': 'white',
-        'weight':2,
+        'color': 'black',
+        'weight':0.5,
         'dashArray': '4, 4',
-        'fillOpacity': 0.7,
+        'fillOpacity': 3.0,
     }
 m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=71)
 folium.GeoJson(
