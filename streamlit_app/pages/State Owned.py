@@ -36,7 +36,7 @@ def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_Solar_Capacity']),
         'color': 'black',
-        'weight': 2,
+        'weight': 0.5,
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
     }
