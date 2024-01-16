@@ -84,22 +84,22 @@ st.metric(label=' ', value=selected_district)
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.metric(label="Rooftop Solar Nos.", value=sum_private_rooftop_installations)
+    st.metric(label="Rooftop Solar Nos.", value= sum_private_rooftop_installations)
 with col2:
     st.metric(label="Minigrid Solar Nos.", value = sum_households)
 with col3:
     st.metric(label="Solar Streetlights Nos.", value = sum_solar_street_lights)  
 with col4:
-    st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps)
+    st.metric(label="Solar Water Pumps Nos.", value= sum_solar_pumps)
 
 col5, col6, col7 = st.columns(3)
 
 with col5:
-    st.metric(label="Rooftop Solar Capacity (kWp)", value=sum_rooftop_capacity)
+    st.metric(label="Rooftop Solar Capacity (kWp)", value=f"{sum_rooftop_capacity} kWp")
 with col6:
-    st.metric(label="Minigrid capacity(kWp)", value=sum_minigrid_capacity)
+    st.metric(label="Minigrid capacity(kWp)", value=f"{sum_minigrid_capacity} kWp")
 with col7:
-    st.metric(label="Solar Street Lights Capacity(kWp)", value = sum_solar_SL_capacity)   
+    st.metric(label="Solar Street Lights Capacity(kWp)", value = f"{sum_solar_SL_capacity} kWp")   
 
 
 
@@ -107,20 +107,20 @@ st.header('Private Owned')
 
 col8, col9, col10,col11 = st.columns(4)
 with col8:
-    st.metric(label="Rooftop Solar Cap.(kWp)", value=sum_privatesolar_capacity)
+    st.metric(label="Rooftop Solar Capacity", value=f"{sum_privatesolar_capacity} kWp")
 with col9:
     st.metric(label="Rooftop Solar No.", value=sum_private_rooftop_installations)
 with col10:
-    st.metric(label="Utility-Grade capacity(kWp)", value=sum_utility_Grade_Solar)
+    st.metric(label="Utility-Grade capacity", value=f"{sum_utility_Grade_Solar} kWp")
 with col11:
     st.metric(label="Solar Water Pumps No.", value=sum_solar_pumps)
 
-st.header('Total On-Grid Capacity (kWp)')
+st.header('Total On-Grid Capacity')
 
 st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
 
 
-st.header('Total Off-Grid Capacity (kWp)')
+st.header('Total Off-Grid Capacity')
 
 st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
 
