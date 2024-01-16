@@ -31,7 +31,7 @@ st.header('RENEWABLE ENERGY INSTALLATIONS IN JHARKHAND')
 st.subheader('Hover Over The Districts for More Information for RE Status in Jharkhand')
 st.header('ROOFTOP SOLAR')
 # Function to customize tooltip
-color_scale = linear.YlGn_09.scale(dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].min(), dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].max())
+color_scale = linear.Greens_09.scale(dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].min(), dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_Solar_Capacity']),
@@ -93,7 +93,7 @@ st.header('MINI-GRID SOLAR')
 
 df4mgs=pd.read_csv(r"streamlit_app/data/Solar_Minigrid.csv")
 # Function to customize tooltip
-color_scale = linear.BrBG_11.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
+color_scale = linear.Viridis_09.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['State_solarMinigrid_Plant_capacity']),
@@ -130,7 +130,7 @@ st.plotly_chart(fig3)
 
 
 st.header('SOLAR STREET LIGHTS ')
-color_scale = linear.BrBG_11.scale(dfall['Solar_Streetlights'].min(), dfall['Solar_Streetlights'].max())
+color_scale = linear.Cividis_09.scale(dfall['Solar_Streetlights'].min(), dfall['Solar_Streetlights'].max())
 def style_function(feature):
     return {
         'fillColor':color_scale(feature['properties']['Solar_streetlights_Count']),
