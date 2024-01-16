@@ -145,6 +145,7 @@ folium_static(m,width=600,height=400)
 dfSGM_sorted = dfall.sort_values(by='SGM_Capacity', ascending=True)
 fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              title='Solar Ground Mounted Capacity(kWp)',
+             text='SGM_Capacity',
              template='plotly_dark',
              width=600, height=600)
 
