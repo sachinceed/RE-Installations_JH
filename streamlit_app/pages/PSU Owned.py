@@ -48,7 +48,7 @@ color_scale.add_to(m)
 folium.LayerControl().add_to(m)
 
 # Display the map
-folium_static(m, width=800, height=600)
+folium_static(m, width=600, height=400)
 
 
 
