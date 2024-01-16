@@ -11,6 +11,7 @@ from branca.colormap import linear
 
 
 st.subheader('ROOFTOP SOLAR')
+st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 with open(r'streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
