@@ -9,25 +9,8 @@ from streamlit_folium import folium_static
 
 # Set Streamlit page title and header
 st.set_page_config(page_title='Decentralized Renewable Energy')
-st.title('RE Installation Count and Capacity Visualization in the State of Jharkhand')
-
-st.image=('Jharkhand_Rajakiya_Chihna.jpg')
-#st.sidebar.image(add_logo(logo_path="C:\Users\sachi\OneDrive\Desktop\webapp\Jharkhand_Rajakiya_Chihna.svg.png", width=50, height=60)) 
-# Logo paths
-logo_left_path = r"C:\Users\sachi\OneDrive\Desktop\webapp\ceed logo.png"
-logo_right_path = r"C:\Users\sachi\OneDrive\Pictures\Jharkhand_Rajakiya_Chihna.svg.png"
-
-# Display logos using st.image
-#col1, col2, col3 = st.columns([1, 10, 1])
-
-#with col1:
-#    st.image(logo_left_path, width=10)  # Adjust the width as needed
-
-#with col2:
-#    
-#with col3:
-#    st.image(logo_right_path, width=10)  # Adjust the width as needed
-
+st.title('Renewable Energy (RE) Dashboard For The State of Jharkhand')
+st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 # Read the CSV data
 dfall = pd.read_csv('streamlit_app/data/All_Total.csv')
@@ -36,7 +19,7 @@ dfall = pd.read_csv('streamlit_app/data/All_Total.csv')
 with open('streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
 
-st.subheader('Hover over the Districts to get the Total Count and Capacity in Jharkhand')
+st.subheader('Hover over The Districts To Get More Information Of RE Status In The State Of Jharkhand')
 
 # Function to customize tooltip
 def style_function(feature):
@@ -81,19 +64,19 @@ folium.LayerControl().add_to(m)
 folium_static(m, width=700, height=500)
 
 # Calculate metrics from filtered data
-sum_households = filtered_dfall['Count_Solar_Mini_Grid_Plant'].sum()
-sum_minigrid_capacity = filtered_dfall['Capacity_Solar_Mini_Grid_Plant'].sum()
-sum_sgmp_capacity = filtered_dfall['SGM_Capacity'].sum()
-sum_rooftop_capacity = filtered_dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].sum()
-sum_rooftop_installations = filtered_dfall['Total_Number_of_Building_solar_rooftop_grid_connected'].sum()
-sum_solar_pumps = filtered_dfall['Count_solar_pump_installed'].sum()
-sum_private_rooftop_installations = filtered_dfall['private_solar_total_count'].sum()
-sum_utility_Grade_Solar = filtered_dfall['SGM_Capacity'].sum()
-sum_privatesolar_capacity=filtered_dfall['Privatesolartotalcapacity'].sum()
-sum_ongrid_capacity=filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolartotalcapacity']].sum().sum()
-sum_offgrid_capacity=filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_Streetlights_capacity']].sum().sum()
-sum_solar_street_lights=filtered_dfall['Solar_street_Lights'].sum()
-sum_solar_SL_capacity=filtered_dfall['Solar_Streetlights_capacity'].sum()
+sum_households = int(filtered_dfall['Count_Solar_Mini_Grid_Plant'].sum())
+sum_minigrid_capacity = int(filtered_dfall['Capacity_Solar_Mini_Grid_Plant'].sum())
+sum_sgmp_capacity = int(filtered_dfall['SGM_Capacity'].sum())
+sum_rooftop_capacity = int(filtered_dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].sum())
+sum_rooftop_installations = int(filtered_dfall['Total_Number_of_Building_solar_rooftop_grid_connected'].sum())
+sum_solar_pumps = int(filtered_dfall['Count_solar_pump_installed'].sum())
+sum_private_rooftop_installations = int(filtered_dfall['private_solar_total_count'].sum())
+sum_utility_Grade_Solar = int(filtered_dfall['SGM_Capacity'].sum())
+sum_privatesolar_capacity = int(filtered_dfall['Privatesolartotalcapacity'].sum())
+sum_ongrid_capacity = int(filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)','Privatesolartotalcapacity']].sum().sum())
+sum_offgrid_capacity = int(filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_Streetlights_capacity']].sum().sum())
+sum_solar_street_lights = int(filtered_dfall['Solar_street_Lights'].sum())
+sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 #total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
 st.header('State Owned')
