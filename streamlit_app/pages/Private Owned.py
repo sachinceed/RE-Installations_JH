@@ -142,14 +142,6 @@ folium_static(m,width=600,height=400)
 
 # Create a pie chart using Plotly Express
 fig = px.pie(dfall, values='SGM_Capacity', names='District', title='Solar Ground Mounted Capacity(kWp)')
-# Customize layout and appearance
-#fig.update_traces(textinfo='percent+label', pull=[0.1, 0.1, 0.1], hole=0.2)
-fig.update_layout(
-    showlegend=True,
-    annotations=[
-        dict(text='Capacity(kWp)', x=0.5, y=0.5, font_size=20, showarrow=False),
-    ],
-)
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig)
