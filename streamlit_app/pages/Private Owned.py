@@ -146,7 +146,7 @@ dfSGM_sorted = dfall.sort_values(by='SGM_Capacity', ascending=True)
 fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              title='Solar Ground Mounted Capacity(kWp)',
              template='plotly_dark',
-             width=700, height=500)
+             width=700, height=700)
 st.plotly_chart(fig4) 
 
 
