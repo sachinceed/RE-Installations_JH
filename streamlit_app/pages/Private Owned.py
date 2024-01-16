@@ -116,6 +116,45 @@ st.plotly_chart(fig3)
 
 
 
+
+st.header('Ground Mounted (Utility Grade Solar)')
+color_scale = linear.Greens_09.scale(dfall['SGM_Capacity'].min(), dfall['SGM_Capacity'].max())
+def style_function(feature):
+    return {
+        'fillColor': color_scale(feature['properties']['SGM_capacity']),
+        'color': 'black',
+        'weight':0.5,
+        'dashArray': '4, 4',
+        'fillOpacity': 3.0,
+    }
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=6, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
+folium.GeoJson(
+    geojson_data,
+    style_function=style_function,
+    tooltip=folium.GeoJsonTooltip(fields=['dtname','SGM_Capacity'], aliases=['District:','Solar Ground Mounted Capacity(kWp):'])
+).add_to(m)
+folium.LayerControl().add_to(m)
+
+color_scale.caption = 'Installed Capacity(kWp)'
+color_scale.add_to(m)
+
+folium_static(m,width=600,height=400)
+
+# Create a pie chart using Plotly Express
+fig = px.pie(dfall, values='SGM_Capacity', names='District', title='Solar Ground Mounted Capacity(kWp)')
+# Customize layout and appearance
+#fig.update_traces(textinfo='percent+label', pull=[0.1, 0.1, 0.1], hole=0.2)
+fig.update_layout(
+    showlegend=True,
+    annotations=[
+        dict(text='Capacity(kWp)', x=0.5, y=0.5, font_size=20, showarrow=False),
+    ],
+)
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig)
+
+
 #st.header('Utlity grade (Ground Mounted) = PROJECT ONGOING')
 
 
