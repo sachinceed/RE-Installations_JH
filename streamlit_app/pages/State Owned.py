@@ -159,7 +159,7 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['dtname','Solar_streetlights_Count'], aliases=['District:','Solar Street Lights Count:'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
-color_scale.caption = 'Installed Capacity (kwp)'
+color_scale.caption = 'Installed Nos.'
 color_scale.add_to(m)
 #folium_static(m,width=700,height=500)
 
