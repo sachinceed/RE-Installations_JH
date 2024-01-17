@@ -53,7 +53,7 @@ color_scale.caption = 'Installed Capacity (kwp)'
 color_scale.add_to(m)
 
 folium.LayerControl().add_to(m)
-folium_static(m,width=700,height=500)
+#folium_static(m,width=700,height=500)
 
 dfSRFY=pd.read_csv(r"streamlit_app/data/FY_GSR_insatllations.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
@@ -82,7 +82,7 @@ fig2.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig2.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
 
 #fig2.show()
-st.plotly_chart(fig2) 
+#st.plotly_chart(fig2) 
 
 row1, row2 = st.columns(2)
 with row1:
@@ -171,7 +171,7 @@ fig1 = px.bar(dfSSL_sorted, y='District', x=['FY-14-15','FY-15-16','FY-16-17','F
 fig1.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig1.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
 #fig1.show()
-st.plotly_chart(fig1) 
+#st.plotly_chart(fig1) 
 
 row1, row2 = st.columns(2)
 with row1:
@@ -220,7 +220,7 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 
 # Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
+#folium_static(m, width=700, height=500)
 
 
 
@@ -264,9 +264,13 @@ folium.GeoJson(
 ).add_to(m)
 folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
+#folium_static(m, width=700, height=500)
 
-
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    folium_static(m, width=700, height=500)
 
 st.subheader('District Courts')
 
@@ -310,7 +314,7 @@ for idx, row in gdf.iterrows():
     ).add_to(m)
 folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
+#folium_static(m, width=700, height=500)
 
 
 
@@ -355,7 +359,16 @@ for idx, row in gdf.iterrows():
     ).add_to(m)
 folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
+#folium_static(m, width=700, height=500)
+
+
+
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    folium_static(m, width=700, height=500)
+
 
 st.subheader('Other Goverment Buildings')
 geojson_file =r"streamlit_app/data/Govt_buildings.geojson"
