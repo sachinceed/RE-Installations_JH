@@ -369,7 +369,7 @@ with row1:
     folium_static(m3,width=600,height=500)
 with row2:
     st.subheader('Police Station installed solar panels')
-    folium_static(m4, width=700, height=500)
+    folium_static(m4, width=600, height=500)
 
 
 st.subheader('Other Goverment Buildings')
@@ -412,7 +412,7 @@ for idx, row in gdf.iterrows():
     ).add_to(m5)
 folium.LayerControl().add_to(m5)
 # Display the Folium map using folium_static
-folium_static(m5, width=700, height=500)
+folium_static(m5, width=600, height=500)
 
 
 #st.header('Utlity grade (Ground Mounted) = PROJECT ONGOING')
