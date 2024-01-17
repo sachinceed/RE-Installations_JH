@@ -59,7 +59,7 @@ dfSRFY=pd.read_csv(r"streamlit_app/data/FY_GSR_insatllations.csv")
 #Grid Connected Solar Rooftop Financial year wise counts in Jharkhand
 dfSRFY_sorted = dfSRFY.sort_values(by='2022-23', ascending=True)
 fig1 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23'],
-             title='Grid interactive Solar Rooftop Installation Nos. in Jharkhand',
+             title='Grid Interactive Solar Rooftop Installation Nos. in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
              width=600, height=500)
