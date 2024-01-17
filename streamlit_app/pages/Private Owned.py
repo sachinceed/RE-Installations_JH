@@ -48,7 +48,7 @@ fig1 = px.bar(dfSRFY_sorted, y='District', x=['PRIVATE_SOLAR_ROOFTOP(19-20)','PR
              title='Private Solar Rooftop Installation (Nos.) in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
-             width=600, height=400)
+             width=700, height=500)
 
 fig1.update_xaxes(showgrid=True)
 fig1.update_yaxes(showgrid=True)
@@ -95,7 +95,7 @@ fig3 = px.bar(dfSSL_sorted, y='District', x=['2016-17','2018-19','2019-20_&_2020
              title='Solar Pump Installations in Jharkhand',
              labels={'value': 'Installation Counts','variable': 'Financial Years'},
              template='plotly_dark',
-             width=600, height=400)
+             width=700, height=500)
 fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig3.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
 #fig1.show()
@@ -139,7 +139,7 @@ fig4 = px.bar(dfSGM_sorted, y='District', x='SGM_Capacity',
              title='Solar Ground Mounted Capacity(kWp)',
              text='SGM_Capacity',
              template='plotly_dark',
-             width=600, height=550)
+             width=700, height=550)
 
 fig4.update_layout(
     xaxis_title='Capacity (kWp)',
