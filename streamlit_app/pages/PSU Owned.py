@@ -57,6 +57,7 @@ dfDVC_sorted = dfall.sort_values(by='DVC_owned_Solar(kwp)', ascending=True)
 fig3 = px.bar(dfDVC_sorted, y='District', x='DVC_owned_Solar(kwp)',
              title='DVC Solar Installations in Jharkhand',
              labels={'value': 'Installation Capacity(kWp)','variable': 'Financial Years'},
+              text='DVC_owned_Solar(kwp)',
              template='plotly_dark',
              width=600, height=500)
 fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
