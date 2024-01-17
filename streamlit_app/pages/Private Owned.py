@@ -59,7 +59,7 @@ fig1.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['District'], ticktext
 
 row1, row2 = st.columns(2)
 with row1:
-    folium_static(m,width=600,height=400)
+    folium_static(m,width=600,height=500)
 with row2:
     st.plotly_chart(fig1)
 
@@ -103,7 +103,7 @@ fig3.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=
 
 row1, row2 = st.columns(2)
 with row1:
-    folium_static(m,width=600,height=400)
+    folium_static(m,width=600,height=500)
 with row2:
     st.plotly_chart(fig3) 
 
@@ -149,7 +149,7 @@ fig4.update_layout(
 
 row1, row2 = st.columns(2)
 with row1:
-    folium_static(m,width=600,height=400)
+    folium_static(m,width=600,height=500)
 with row2:
     st.plotly_chart(fig4)  
 
