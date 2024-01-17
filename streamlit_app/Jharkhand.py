@@ -61,7 +61,16 @@ m.options['scrollWheelZoom'] = False
 
 folium.LayerControl().add_to(m)
 
-folium_static(m, width=700, height=500)
+
+
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m, width=700, height=500)
+with row2:
+    st.header('Total On-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
+    st.header('Total On-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
 
 # Calculate metrics from filtered data
 sum_households = int(filtered_dfall['Count_Solar_Mini_Grid_Plant'].sum())
@@ -115,14 +124,10 @@ with col10:
 with col11:
     st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps)
 
-st.header('Total On-Grid Capacity')
-
-st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
 
 
-st.header('Total Off-Grid Capacity')
 
-st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
+
 
 #st.header('Total Solar Capacity')
 #st.metric(label=" ", value= )
