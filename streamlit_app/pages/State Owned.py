@@ -66,7 +66,7 @@ fig1 = px.bar(dfSRFY_sorted, y='Districts', x=['2016-17', '2017-18', '2018-19', 
 fig1.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig1.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktext=dfSRFY_sorted['Districts'])
 #fig1.show()
-st.plotly_chart(fig1) 
+#st.plotly_chart(fig1) 
 
 
 
@@ -84,6 +84,11 @@ fig2.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['Districts'], ticktex
 #fig2.show()
 st.plotly_chart(fig2) 
 
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    st.plotly_chart(fig2)
 
 
 
@@ -109,7 +114,7 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['dtname','State_SolarGrid_mini_plant','State_solarMinigrid_Plant_capacity'], aliases=['District:','Solar Minigrids Count:','Solar Minigrids Capacity(kWp):'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
-folium_static(m,width=700,height=500)
+#folium_static(m,width=700,height=500)
 
 
 df_sorted1 =df4mgs.sort_values(by='Minigrid_Capacity(kWp)',ascending=True)
@@ -126,7 +131,13 @@ fig3 = px.bar(df_sorted1,
 fig3.update_xaxes(title_text='Capacity (kWp)')
 fig3.update_traces(texttemplate='%{text:.2s}(kWp)', textposition='inside')  # Adjust text formatting and position
 fig3.update_yaxes(showticklabels=True, showgrid=True, zeroline=True)
-st.plotly_chart(fig3)
+#st.plotly_chart(fig3)
+
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    st.plotly_chart(fig3)
 
 
 st.header('SOLAR STREET LIGHTS ')
@@ -146,7 +157,7 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['dtname','Solar_streetlights_Count'], aliases=['District:','Solar Street Lights Count:'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
-folium_static(m,width=700,height=500)
+#folium_static(m,width=700,height=500)
 
 #'Solar Streetlights Installation (Nos.) in Jharkhand
 dfSSL=pd.read_csv(r"streamlit_app/data/SSL compiled FY_cap.csv")
@@ -162,6 +173,11 @@ fig1.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=
 #fig1.show()
 st.plotly_chart(fig1) 
 
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    st.plotly_chart(fig1)
 
 st.title('Solar Rooftop Locations in the State of Jharkhand')
 st.subheader('Goverment Hospitals')
@@ -295,9 +311,6 @@ for idx, row in gdf.iterrows():
 folium.LayerControl().add_to(m)
 # Display the Folium map using folium_static
 folium_static(m, width=700, height=500)
-
-
-
 
 
 
