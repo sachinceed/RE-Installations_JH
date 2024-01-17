@@ -84,13 +84,12 @@ sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 
 
 
-row1, row2,row3 = st.columns(3)
+row1, row2 = st.columns(2)
 with row1:
     folium_static(m, width=600, height=400)
 with row2:
     st.header('Total On-Grid Capacity')
     st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
-with row3:
     st.header('Total On-Grid Capacity')
     st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
 
