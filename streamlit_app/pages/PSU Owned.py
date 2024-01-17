@@ -62,6 +62,7 @@ fig3 = px.bar(dfDVC_sorted, y='District', x='DVC_owned_Solar(kwp)',
              width=600, height=500)
 fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig3.update_yaxes(tickmode='array', tickvals=dfDVC_sorted['District'], ticktext=dfDVC_sorted['District'])
+fig3.update_yaxes(showticklabels=True, showgrid=True, zeroline=True)
 #fig1.show()
 
 row1, row2 = st.columns(2)
