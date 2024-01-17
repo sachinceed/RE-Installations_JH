@@ -180,7 +180,7 @@ with row2:
     st.plotly_chart(fig1)
 
 st.title('Solar Rooftop Locations in the State of Jharkhand')
-st.subheader('Goverment Hospitals')
+
 # Load GeoJSON file
 geojson_file = r"streamlit_app/data/Hospitals.geojson"
 gdf = gpd.read_file(geojson_file)
@@ -189,7 +189,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
+m1 = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
 def style_function(feature):
@@ -210,21 +210,21 @@ for idx, row in gdf.iterrows():
         location=[row.geometry.centroid.y, row.geometry.centroid.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'yellow',icon='star',prefix='fa',icon_color='white')
-    ).add_to(m)
+    ).add_to(m1)
 
 # Add GeoJSON layer
 folium.GeoJson(
     polygon_data,
     name='Jharkhand Districts',
-).add_to(m)
-folium.LayerControl().add_to(m)
+).add_to(m1)
+folium.LayerControl().add_to(m1)
 
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
 
 
-st.subheader('Educational Institutions')
+
 
 # Load GeoJSON file
 geojson_file = r"streamlit_app/data/Educational_Instutions.geojson"
@@ -233,7 +233,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=False)
+m2 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=False)
 
 # Function to customize tooltip
 def style_function(feature):
@@ -255,25 +255,26 @@ for idx, row in gdf.iterrows():
         location=[row.geometry.centroid.y, row.geometry.centroid.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'black',icon='star',prefix='fa',icon_color='white')
-    ).add_to(m)
+    ).add_to(m2)
 
 # Add GeoJSON layer
 folium.GeoJson(
     polygon_data,
     name='Jharkhand Districts',
-).add_to(m)
-folium.LayerControl().add_to(m)
+).add_to(m2)
+folium.LayerControl().add_to(m2)
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
 row1, row2 = st.columns(2)
 with row1:
-    folium_static(m,width=600,height=500)
+    st.subheader('Goverment Hospitals')
+    folium_static(m1,width=600,height=500)
 with row2:
-    folium_static(m, width=700, height=500)
+    st.subheader('Educational Institutions')
+    folium_static(m2, width=700, height=500)
 
-st.subheader('District Courts')
-
+##
 geojson_file =(r"streamlit_app/data/courts.geojson")
 
 gdf = gpd.read_file(geojson_file)
@@ -282,7 +283,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
+m3 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
 def style_function(feature):
@@ -298,7 +299,7 @@ def style_function(feature):
 folium.GeoJson(
     polygon_data,
     name='Jharkhand Districts',
-).add_to(m)
+).add_to(m3)
 
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
@@ -311,14 +312,13 @@ for idx, row in gdf.iterrows():
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
-    ).add_to(m)
-folium.LayerControl().add_to(m)
+    ).add_to(m3)
+folium.LayerControl().add_to(m3)
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
 
 
-st.subheader('Police Station installed solar panels')
 
 geojson_file =r"streamlit_app/data/Police stations.geojson"
 gdf = gpd.read_file(geojson_file)
@@ -327,7 +327,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
+m4 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
 def style_function(feature):
@@ -343,7 +343,7 @@ def style_function(feature):
 folium.GeoJson(
     polygon_data,
     name='Jharkhand Districts',
-).add_to(m)
+).add_to(m4)
 
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
@@ -356,8 +356,8 @@ for idx, row in gdf.iterrows():
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'blue',icon='star',prefix='fa',icon_color='white'),
-    ).add_to(m)
-folium.LayerControl().add_to(m)
+    ).add_to(m4)
+folium.LayerControl().add_to(m4)
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
@@ -365,9 +365,11 @@ folium.LayerControl().add_to(m)
 
 row1, row2 = st.columns(2)
 with row1:
-    folium_static(m,width=600,height=500)
+    st.subheader('District Courts')
+    folium_static(m3,width=600,height=500)
 with row2:
-    folium_static(m, width=700, height=500)
+    st.subheader('Police Station installed solar panels')
+    folium_static(m4, width=700, height=500)
 
 
 st.subheader('Other Goverment Buildings')
@@ -378,7 +380,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
+m5 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
 def style_function(feature):
@@ -394,7 +396,7 @@ def style_function(feature):
 folium.GeoJson(
     polygon_data,
     name='Jharkhand Districts',
-).add_to(m)
+).add_to(m5)
 
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
@@ -407,10 +409,10 @@ for idx, row in gdf.iterrows():
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
         icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
-    ).add_to(m)
-folium.LayerControl().add_to(m)
+    ).add_to(m5)
+folium.LayerControl().add_to(m5)
 # Display the Folium map using folium_static
-folium_static(m, width=700, height=500)
+folium_static(m5, width=700, height=500)
 
 
 #st.header('Utlity grade (Ground Mounted) = PROJECT ONGOING')
