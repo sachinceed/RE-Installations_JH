@@ -48,7 +48,26 @@ color_scale.add_to(m)
 folium.LayerControl().add_to(m)
 
 # Display the map
-folium_static(m, width=600, height=400)
+#folium_static(m, width=600, height=400)
+
+
+
+dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
+dfDVC_sorted = dfSSL.sort_values(by='DVC_owned_Solar(kwp)', ascending=True)
+fig3 = px.bar(dfDVC_sorted, y='District', x='DVC_owned_Solar(kwp)',
+             title='DVC Solar Installations in Jharkhand',
+             labels={'value': 'Installation Capacity(kWp)','variable': 'Financial Years'},
+             template='plotly_dark',
+             width=600, height=500)
+fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+fig3.update_yaxes(tickmode='array', tickvals=dfDVC_sorted['District'], ticktext=dfDVC_sorted['District'])
+#fig1.show()
+
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=500)
+with row2:
+    st.plotly_chart(fig3)
 
 
 
