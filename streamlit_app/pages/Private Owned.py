@@ -37,7 +37,7 @@ folium.GeoJson(
 color_scale.caption = 'Installed Capacity (kwp)'
 color_scale.add_to(m)
 folium.LayerControl().add_to(m)
-folium_static(m,width=600,height=400)
+#folium_static(m,width=600,height=400)
 
 
 
@@ -55,9 +55,13 @@ fig1.update_yaxes(showgrid=True)
 fig1.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig1.update_yaxes(tickmode='array', tickvals=dfSRFY_sorted['District'], ticktext=dfSRFY_sorted['District'])
 #fig1.show()
-st.plotly_chart(fig1) 
+#st.plotly_chart(fig1) 
 
-
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=400)
+with row2:
+    st.plotly_chart(fig1)
 
 st.header('SOLAR PUMPS')
 color_scale = linear.Greens_09.scale(dfall['Count_solar_pump_installed'].min(), dfall['Count_solar_pump_installed'].max())
@@ -80,7 +84,7 @@ folium.LayerControl().add_to(m)
 color_scale.caption = 'Installed Counts'
 color_scale.add_to(m)
 
-folium_static(m,width=600,height=400)
+
 #dfall = dfall.sort_values(b ascending=True)
 
 
@@ -95,8 +99,13 @@ fig3 = px.bar(dfSSL_sorted, y='District', x=['2016-17','2018-19','2019-20_&_2020
 fig3.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
 fig3.update_yaxes(tickmode='array', tickvals=dfSSL_sorted['District'], ticktext=dfSSL_sorted['District'])
 #fig1.show()
-st.plotly_chart(fig3) 
 
+
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=400)
+with row2:
+    st.plotly_chart(fig3) 
 
 
 
@@ -138,7 +147,13 @@ fig4.update_layout(
     yaxis=dict(showgrid=True)
 )
 
-st.plotly_chart(fig4) 
+row1, row2 = st.columns(2)
+with row1:
+    folium_static(m,width=600,height=400)
+with row2:
+    st.plotly_chart(fig4)  
+
+
 
 
 
