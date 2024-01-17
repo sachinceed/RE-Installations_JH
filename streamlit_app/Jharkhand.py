@@ -63,15 +63,7 @@ folium.LayerControl().add_to(m)
 
 
 
-row1, row2,row3 = st.columns(3)
-with row1:
-    folium_static(m, width=600, height=400)
-with row2:
-    st.header('Total On-Grid Capacity')
-    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
-with row3:
-    st.header('Total On-Grid Capacity')
-    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
+
 
 # Calculate metrics from filtered data
 sum_households = int(filtered_dfall['Count_Solar_Mini_Grid_Plant'].sum())
@@ -89,6 +81,20 @@ sum_solar_street_lights = int(filtered_dfall['Solar_street_Lights'].sum())
 sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 #total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
+
+
+
+row1, row2,row3 = st.columns(3)
+with row1:
+    folium_static(m, width=600, height=400)
+with row2:
+    st.header('Total On-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
+with row3:
+    st.header('Total On-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
+
+
 st.header('State Owned')
 st.metric(label=' ', value=selected_district)
 
