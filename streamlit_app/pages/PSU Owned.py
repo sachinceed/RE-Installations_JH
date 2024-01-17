@@ -53,7 +53,7 @@ folium.LayerControl().add_to(m)
 
 
 dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
-dfDVC_sorted = dfSSL.sort_values(by='DVC_owned_Solar(kwp)', ascending=True)
+dfDVC_sorted = dfall.sort_values(by='DVC_owned_Solar(kwp)', ascending=True)
 fig3 = px.bar(dfDVC_sorted, y='District', x='DVC_owned_Solar(kwp)',
              title='DVC Solar Installations in Jharkhand',
              labels={'value': 'Installation Capacity(kWp)','variable': 'Financial Years'},
