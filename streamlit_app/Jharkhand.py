@@ -100,9 +100,7 @@ col1, col2, col3 = st.columns(3)
 
 # Column 1: Map
 with col1:
-    st.header('Map')
     st.folium_static(m, width=600, height=400)
-
 # Column 2: State Owned Metrics
 with col2:
     st.header('State Owned')
