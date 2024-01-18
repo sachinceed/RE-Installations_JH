@@ -95,24 +95,30 @@ sum_solar_street_lights = int(filtered_dfall['Solar_street_Lights'].sum())
 sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 #total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
-row1, row2, row3 = st.columns(3)
-with row1:
-    folium_static(m, width=600, height=400)
-with row2:
+# Create three beta_columns
+col1, col2, col3 = st.beta_columns(3)
+
+# Column 1: Map
+with col1:
+    st.header('Map')
+    st.folium_static(m, width=600, height=400)
+
+# Column 2: State Owned Metrics
+with col2:
     st.header('State Owned')
-    # Add state-owned metrics here
     st.metric(label="Rooftop Solar Capacity (kWp)", value=sum_rooftop_capacity)
-    st.metric(label="Minigrid capacity(kWp)", value=sum_minigrid_capacity)
+    st.metric(label="Minigrid capacity (kWp)", value=sum_minigrid_capacity)
     st.metric(label="Solar Water Pumps", value=sum_solar_pumps)
     st.metric(label="Rooftop Solar Installations", value=sum_rooftop_installations)
-    st.metric(label="Installed Minigrid Solar(No.)", value = sum_households)
-with row3:
+    st.metric(label="Installed Minigrid Solar (No.)", value=sum_households)
+
+# Column 3: Private Owned Metrics
+with col3:
     st.header('Private Owned')
     st.metric(label="Rooftop Solar Capacity", value=f"{sum_privatesolar_capacity} kWp")
     st.metric(label="Rooftop Solar Nos.", value=sum_private_rooftop_installations)
     st.metric(label="Utility-Grade capacity", value=f"{sum_utility_Grade_Solar} kWp")
     st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps)
-
 
 st.header('Total On-Grid Capacity')
 st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
