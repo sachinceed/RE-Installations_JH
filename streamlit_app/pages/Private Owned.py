@@ -9,6 +9,9 @@ from streamlit_folium import folium_static
 import json
 from branca.colormap import linear
 
+# Set the page configuration to wide mode
+st.set_page_config(layout="wide")
+
 
 st.subheader('ROOFTOP SOLAR')
 st.sidebar.image("streamlit_app/data/ceed logo.png")
