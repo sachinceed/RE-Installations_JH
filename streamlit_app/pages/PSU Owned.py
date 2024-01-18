@@ -35,7 +35,7 @@ def style_function(feature):
 color_scale = linear.Greens_09.scale(dfall['DVC_owned_Solar(kwp)'].min(), dfall['DVC_owned_Solar(kwp)'].max())
 
 # Create the map
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron', min_zoom=7, max_zoom=7,zoomControl=False)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron', min_zoom=7, max_zoom=7,zoomControl=True)
 
 # Add GeoJson layer with customized style and tooltip
 folium.GeoJson(
