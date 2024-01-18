@@ -98,19 +98,8 @@ sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 # Create three beta_columns
 col1, col2,  = st.columns(2)
 
-# Get the HTML code for the folium map
-folium_map_html = f'<div>{m.get_root().render()}</div>'
 
-# Apply custom CSS to center the map horizontally
-centered_map_html = f"""
-    <div style="display: flex; justify-content: center;">
-        {folium_map_html}
-    </div>
-"""
-
-# Display the centered map using st.markdown
-st.markdown(centered_map_html, unsafe_allow_html=True)
-#folium_static(m, width=700, height=500)
+folium_static(m, width=900, height=600)
 
 
 col1, col2, col3 = st.columns(3)
