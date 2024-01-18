@@ -67,7 +67,7 @@ folium.GeoJson(
     geojson_data,
     style_function=style_function,
     tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solar_Counts','State_Solar_Capacity','State_Solarpump_counts','State_solarMinigrid_Plant_capacity','State_SolarGrid_mini_plant','SGM_count','SGM_Capacity','Solar_streetlights','pvt_SOLAR_TCOUNTS'], 
-                                 aliases=['District:','Grid Connected Installed Solar Rooftop(Nos.)','Grid Connected Solar Rooftop Capacity(kWp)','Solar Pump (Nos.)','Minigrid Solar Capacity(kWp)','Minigrid Solar Installed(No.)','Solar Ground Mounted(Nos.)','Solar Ground Mounted Capacity(Kwp)','Solar street lights(Nos.)','Private Solar(Nos.)'])
+                                 aliases=['District:','Grid Connected Solar Rooftop(Nos.)','Grid Connected Solar Rooftop Capacity(kWp)','Solar Pump (Nos.)','Minigrid Solar Capacity(kWp)','Minigrid Solar(Nos.)','Solar Ground Mounted(Nos.)','Solar Ground Mounted Capacity(Kwp)','Solar street lights(Nos.)','Private Solar(Nos.)'])
 ).add_to(m)
 
 # Lock the zoom level
