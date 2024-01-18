@@ -99,7 +99,7 @@ sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 col1, col2,  = st.columns(2)
 
 
-folium_static(m, width=1100, height=500)
+folium_static(m, width=1200, height=500)
 
 
 col1, col2, col3 = st.columns(3)
