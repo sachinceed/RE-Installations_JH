@@ -9,6 +9,9 @@ from streamlit_folium import folium_static
 import json
 from branca.colormap import linear
 
+# Set the page configuration to wide mode
+st.set_page_config(layout="wide")
+
 
 dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
