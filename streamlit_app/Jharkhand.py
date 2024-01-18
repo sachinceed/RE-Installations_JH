@@ -66,8 +66,8 @@ m = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=5, max_zoom=15
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
-    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solar_Counts','State_Solar_Capacity','State_Solarpump_counts','State_solarMinigrid_Plant_capacity','State_SolarGrid_mini_plant','SGM_count','SGM_Capacity','Solar_streetlights','PRIVATE_SOLAR(19-20)','PRIVATE_SOLAR_ROOFTOP'], 
-                                 aliases=['District:','Grid Connected installed Solar Rooftop Counts(No.)','Grid Connected Solar Rooftop Capacity(kWp)','Solar Pump Counts(No.)','Minigrid Solar Capacity(kWp)','Minigrid Solar installed Counts(No.)','Solar Ground Mounted Counts(No.)','Solar Ground Mounted Capacity(Kwp)','Solar street lights Count(No.)','Private solarrooftop installed 19-20','Private solarrooftop installed 22-23'])
+    tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solar_Counts','State_Solar_Capacity','State_Solarpump_counts','State_solarMinigrid_Plant_capacity','State_SolarGrid_mini_plant','SGM_count','SGM_Capacity','Solar_streetlights','pvt_SOLAR_TCOUNTS'], 
+                                 aliases=['District:','Grid Connected Installed Solar Rooftop(Nos.)','Grid Connected Solar Rooftop Capacity(kWp)','Solar Pump (Nos.)','Minigrid Solar Capacity(kWp)','Minigrid Solar Installed(No.)','Solar Ground Mounted(Nos.)','Solar Ground Mounted Capacity(Kwp)','Solar street lights(Nos.)','Private Solar(Nos.)'])
 ).add_to(m)
 
 # Lock the zoom level
