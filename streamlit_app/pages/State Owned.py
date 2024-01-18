@@ -110,7 +110,7 @@ def style_function(feature):
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7,control_scale=True)
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
@@ -155,7 +155,7 @@ def style_function(feature):
         'dashArray': '4, 4',
         'fillOpacity': 3.0,
     }
-m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=71)
+m = folium.Map(location=[23.6345, 85.3803], zoom_start=7, tiles='CartoDB Positron',min_zoom =7,max_zoom=7,control_scale=True)
 folium.GeoJson(
     geojson_data,
     style_function=style_function,
@@ -240,7 +240,7 @@ gdf = gpd.read_file(geojson_file)
 gdf['Category'] = gdf['Category'].astype('str')
 
 # Create a Folium map centered at the mean of the coordinates
-m2 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=False)
+m2 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
 def style_function(feature):
