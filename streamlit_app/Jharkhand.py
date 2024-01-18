@@ -8,7 +8,10 @@ from streamlit_folium import folium_static
 
 
 # Set Streamlit page title and header
-st.set_page_config(page_title='Decentralized Renewable Energy')
+st.set_page_config(page_title='Decentralized Renewable Energy',layout="wide")
+
+
+
 st.title('Renewable Energy (RE) Dashboard For The State of Jharkhand')
 st.sidebar.image("streamlit_app/data/ceed logo.png")
 
