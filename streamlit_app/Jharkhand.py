@@ -96,7 +96,7 @@ sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
 #total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
 # Create three beta_columns
-col1, col2, col3 = st.beta_columns(3)
+col1, col2, col3 = st.columns(3)
 
 # Column 1: Map
 with col1:
