@@ -102,10 +102,12 @@ col1, col2,  = st.columns(2)
 with col1:
     folium_static(m, width=600, height=400)
 with col2:
-st.header('Total On-Grid Capacity')
-st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
-st.header('Total Off-Grid Capacity')
-st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
+    st.header('Total On-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_ongrid_capacity} kWp")
+    st.header('Total Off-Grid Capacity')
+    st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
+
+
 
 
 col1, col2,  = st.columns(2)
