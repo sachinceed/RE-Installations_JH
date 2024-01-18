@@ -279,7 +279,7 @@ with row1:
     folium_static(m1,width=600,height=500)
 with row2:
     st.subheader('Educational Institutions')
-    folium_static(m2, width=700, height=500)
+    folium_static(m2, width=600, height=500)
 
 ##
 geojson_file =(r"streamlit_app/data/courts.geojson")
