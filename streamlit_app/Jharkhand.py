@@ -79,6 +79,8 @@ folium.LayerControl().add_to(m)
 
 
 
+
+
 # Calculate metrics from filtered data
 sum_households = int(filtered_dfall['Count_Solar_Mini_Grid_Plant'].sum())
 sum_minigrid_capacity = int(filtered_dfall['Capacity_Solar_Mini_Grid_Plant'].sum())
@@ -101,7 +103,7 @@ col1, col2,  = st.columns(2)
 
 folium_static(m, width=1400, height=500)
 
-
+st.write(selected_district)
 col1, col2, col3 = st.columns(3)
 
 with col1:
