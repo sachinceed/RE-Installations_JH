@@ -375,7 +375,7 @@ with row1:
     st.subheader('District Courts')
     folium_static(m3,width=600,height=500)
 with row2:
-    st.subheader('Police Station installed solar panels')
+    st.subheader('Police Stations')
     folium_static(m4, width=600, height=500)
 
 
