@@ -8,7 +8,7 @@ from streamlit_folium import folium_static
 
 
 # Set Streamlit page title and header
-st.set_page_config(page_title='Decentralized Renewable Energy',layout="wide")
+st.set_page_config(page_title='Renewable Energy Dashboard',layout="wide")
 
 
 # Assuming imagePath is the path to your image file and link is the URL you want to redirect to
@@ -24,7 +24,7 @@ st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 
 
-st.title('Renewable Energy (RE) Dashboard For The State of Jharkhand')
+st.title('Renewable Energy Dashboard For The State of Jharkhand')
 
 # Read the CSV data
 dfall = pd.read_csv('streamlit_app/data/All_Total.csv')
