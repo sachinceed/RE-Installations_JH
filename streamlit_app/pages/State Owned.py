@@ -22,7 +22,7 @@ with open(r'streamlit_app/data/jhnew.geojson') as f:
 polygon_shapefile = r'streamlit_app/data/jhnew.geojson'
 # Reading and converting to WGS84 CRS
 polygon_data = gpd.read_file(polygon_shapefile).to_crs(epsg=4326)
-st.sidebar.image("streamlit_app/data/ceed logo.png")
+#st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 
 
