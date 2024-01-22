@@ -17,7 +17,7 @@ link = "https://ceedindia.org/"
 
 # Use st.sidebar.markdown to embed an HTML link with the image
 #st.sidebar.markdown(f'<a href="{link}" target="_blank"><img src="{imagePath}" width="50" alt="Sidebar Image"></a>', unsafe_allow_html=True)
-st.sidebar.image("streamlit_app/data/ceed logo.png")
+#st.sidebar.image("streamlit_app/data/ceed logo.png")
 #st.sidebar.markdown(f'[![Image]({image_path})]({link})')
 
 
