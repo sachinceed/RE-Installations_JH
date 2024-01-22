@@ -15,7 +15,7 @@ from streamlit_folium import folium_static
 st.set_page_config(layout="wide")
 
 st.subheader('ROOFTOP SOLAR INSTALLED BY DVC')
-st.sidebar.image("streamlit_app/data/ceed logo.png")
+#st.sidebar.image("streamlit_app/data/ceed logo.png")
 
 with open(r'streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
