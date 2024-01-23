@@ -103,7 +103,7 @@ col1, col2,  = st.columns(2)
 
 folium_static(m, width=1400, height=500)
 
-st.write(selected_district)
+st.header(selected_district)
 col1, col2, col3 = st.columns(3)
 
 with col1:
