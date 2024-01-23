@@ -50,7 +50,8 @@ color_scale.add_to(m)
 
 # Add LayerControl
 folium.LayerControl().add_to(m)
-
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 # Display the map
 #folium_static(m, width=600, height=400)
 
