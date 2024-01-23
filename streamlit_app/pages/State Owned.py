@@ -329,6 +329,8 @@ for idx, row in gdf.iterrows():
         icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
     ).add_to(m3)
 folium.LayerControl().add_to(m3)
+# Lock the zoom level
+m3.options['scrollWheelZoom'] = False
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
@@ -373,6 +375,8 @@ for idx, row in gdf.iterrows():
         icon=folium.Icon(color= 'blue',icon='star',prefix='fa',icon_color='white'),
     ).add_to(m4)
 folium.LayerControl().add_to(m4)
+# Lock the zoom level
+m4.options['scrollWheelZoom'] = False
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
@@ -426,6 +430,8 @@ for idx, row in gdf.iterrows():
         icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
     ).add_to(m5)
 folium.LayerControl().add_to(m5)
+# Lock the zoom level
+m5.options['scrollWheelZoom'] = False
 # Display the Folium map using folium_static
 folium_static(m5, width=600, height=500)
 
