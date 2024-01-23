@@ -40,6 +40,8 @@ folium.GeoJson(
 color_scale.caption = 'Installed Capacity (kwp)'
 color_scale.add_to(m)
 folium.LayerControl().add_to(m)
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 #folium_static(m,width=600,height=400)
 
 
@@ -83,7 +85,8 @@ folium.GeoJson(
     tooltip=folium.GeoJsonTooltip(fields=['dtname','State_Solarpump_counts'], aliases=['District:','Solar Pumps Count:'])
 ).add_to(m)
 folium.LayerControl().add_to(m)
-
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 color_scale.caption = 'Installed Counts'
 color_scale.add_to(m)
 
@@ -132,7 +135,8 @@ folium.LayerControl().add_to(m)
 
 color_scale.caption = 'Installed Capacity(kWp)'
 color_scale.add_to(m)
-
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 #folium_static(m,width=600,height=400)
 
 
