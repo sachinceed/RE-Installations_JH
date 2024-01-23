@@ -54,7 +54,8 @@ folium.GeoJson(
 # Add color scale legend with white fonts
 color_scale.caption = 'Installed Capacity (kwp)'
 color_scale.add_to(m)
-
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 folium.LayerControl().add_to(m)
 #folium_static(m,width=700,height=500)
 
@@ -119,6 +120,8 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 color_scale.caption = 'Installed Capacity (kwp)'
 color_scale.add_to(m)
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 #folium_static(m,width=700,height=500)
 
 
@@ -164,6 +167,8 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 color_scale.caption = 'Installed Nos.'
 color_scale.add_to(m)
+# Lock the zoom level
+m.options['scrollWheelZoom'] = False
 #folium_static(m,width=700,height=500)
 
 #'Solar Streetlights Installation (Nos.) in Jharkhand
@@ -225,7 +230,8 @@ folium.GeoJson(
     name='Jharkhand Districts',
 ).add_to(m1)
 folium.LayerControl().add_to(m1)
-
+# Lock the zoom level
+m1.options['scrollWheelZoom'] = False
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
@@ -270,6 +276,8 @@ folium.GeoJson(
     name='Jharkhand Districts',
 ).add_to(m2)
 folium.LayerControl().add_to(m2)
+# Lock the zoom level
+m2.options['scrollWheelZoom'] = False
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
