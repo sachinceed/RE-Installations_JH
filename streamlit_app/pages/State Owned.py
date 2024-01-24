@@ -218,25 +218,24 @@ def style_function(feature):
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
+
+
+    # Path to the custom icon image on your local machine
+    icon_path = r'streamlit_app/data/eceaf6265de88ebc0411aef3bda851de.png'
+
+    # Define the custom icon
+    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+
+    # Create a marker with the custom icon
     folium.Marker(
-        location=[row.geometry.centroid.y, row.geometry.centroid.x],
+        location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'yellow',icon='star',prefix='fa',icon_color='white')
+        icon=icon,
     ).add_to(m1)
 
-# Add GeoJSON layer
-folium.GeoJson(
-    polygon_data,
-    name='Jharkhand Districts',
-).add_to(m1)
 folium.LayerControl().add_to(m1)
 # Lock the zoom level
 m1.options['scrollWheelZoom'] = False
-# Display the Folium map using folium_static
-#folium_static(m, width=700, height=500)
-
-
-
 
 
 # Load GeoJSON file
@@ -262,19 +261,19 @@ def style_function(feature):
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
     
-    # Customize the icon size (adjust the icon_size parameter)
-    icon_size = (2,2)  # Change the size according to your preference
+    # Path to the custom icon image on your local machine
+    icon_path = r'streamlit_app/data/school.png'
+
+    # Define the custom icon
+    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+
+    # Create a marker with the custom icon
     folium.Marker(
-        location=[row.geometry.centroid.y, row.geometry.centroid.x],
+        location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'black',icon='star',prefix='fa',icon_color='white')
+        icon=icon,
     ).add_to(m2)
 
-# Add GeoJSON layer
-folium.GeoJson(
-    polygon_data,
-    name='Jharkhand Districts',
-).add_to(m2)
 folium.LayerControl().add_to(m2)
 # Lock the zoom level
 m2.options['scrollWheelZoom'] = False
@@ -319,18 +318,23 @@ folium.GeoJson(
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
-    
-    # Customize the icon size (adjust the icon_size parameter)
-    #icon=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\police logo.png"
-    icon_size = ()  # Change the size according to your preference
+    # Path to the custom icon image on your local machine
+    icon_path = r'streamlit_app/data/courtspng.png'
+
+    # Define the custom icon
+    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+
+    # Create a marker with the custom icon
     folium.Marker(
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
+        icon=icon,
     ).add_to(m3)
+
 folium.LayerControl().add_to(m3)
 # Lock the zoom level
-m3.options['scrollWheelZoom'] = False
+m3.options['scrollWheelZoom'] = False    
+
 # Display the Folium map using folium_static
 #folium_static(m, width=700, height=500)
 
@@ -366,14 +370,19 @@ folium.GeoJson(
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
     
-    # Customize the icon size (adjust the icon_size parameter)
-    #icon=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\police logo.png"
-    icon_size = ()  # Change the size according to your preference
+    # Path to the custom icon image on your local machine
+    icon_path = r'streamlit_app/data/police logo.png'
+
+    # Define the custom icon
+    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+
+    # Create a marker with the custom icon
     folium.Marker(
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'blue',icon='star',prefix='fa',icon_color='white'),
+        icon=icon,
     ).add_to(m4)
+
 folium.LayerControl().add_to(m4)
 # Lock the zoom level
 m4.options['scrollWheelZoom'] = False
@@ -420,15 +429,19 @@ folium.GeoJson(
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
-    
-    # Customize the icon size (adjust the icon_size parameter)
-    #icon=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\police logo.png"
-    icon_size = ()  # Change the size according to your preference
+       # Path to the custom icon image on your local machine
+    icon_path = r'streamlit_app/data/govt._BLd.png'
+
+    # Define the custom icon
+    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+
+    # Create a marker with the custom icon
     folium.Marker(
         location=[row.geometry.y, row.geometry.x],
         popup=folium.Popup(popup_text, parse_html=True),
-        icon=folium.Icon(color= 'gray',icon='star',prefix='fa',icon_color='white'),
+        icon=icon,
     ).add_to(m5)
+
 folium.LayerControl().add_to(m5)
 # Lock the zoom level
 m5.options['scrollWheelZoom'] = False
