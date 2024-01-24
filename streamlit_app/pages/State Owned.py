@@ -230,7 +230,7 @@ for idx, row in gdf.iterrows():
     icon_path = r'streamlit_app/data/eceaf6265de88ebc0411aef3bda851de.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(26, 26))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
@@ -276,7 +276,7 @@ for idx, row in gdf.iterrows():
     icon_path = r'streamlit_app/data/school.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(26, 26))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
@@ -385,7 +385,7 @@ for idx, row in gdf.iterrows():
     icon_path = r'streamlit_app/data/police logo.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(26, 26))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
@@ -444,7 +444,7 @@ for idx, row in gdf.iterrows():
     icon_path = r'streamlit_app/data/govt_B.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(26, 26))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
