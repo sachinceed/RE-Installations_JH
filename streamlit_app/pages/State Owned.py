@@ -215,6 +215,12 @@ def style_function(feature):
 # Define a custom icon with color (e.g., red)
 #icon = folium.CustomIcon(icon_image=r"C:\Users\sachi\OneDrive\Desktop\WEBAPPP\data\UPdated from JREDA\icon.png", icon_size=(30, 30), icon_anchor=(15, 15), popup_anchor=(0, -15))
 #icon = folium.Icon(color='red')
+
+# Add GeoJSON layer
+folium.GeoJson(
+    polygon_data,
+    name='Jharkhand Districts',
+).add_to(m1)
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
@@ -256,6 +262,11 @@ def style_function(feature):
         'dashArray': '4, 4',
         'fillOpacity': 0.4,
     }
+# Add GeoJSON layer
+folium.GeoJson(
+    polygon_data,
+    name='Jharkhand Districts',
+).add_to(m2)
 
 # Iterate through GeoDataFrame rows and add markers
 for idx, row in gdf.iterrows():
@@ -319,7 +330,7 @@ folium.GeoJson(
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
     # Path to the custom icon image on your local machine
-    icon_path = r'streamlit_app/data/courtspng.png'
+    icon_path = r'streamlit_app/data/court-building.png'
 
     # Define the custom icon
     icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
@@ -430,7 +441,7 @@ folium.GeoJson(
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
        # Path to the custom icon image on your local machine
-    icon_path = r'streamlit_app/data/govt._BLd.png'
+    icon_path = r'streamlit_app/data/govt.build.png'
 
     # Define the custom icon
     icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
