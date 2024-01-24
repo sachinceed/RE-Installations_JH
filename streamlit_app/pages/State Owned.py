@@ -330,10 +330,10 @@ folium.GeoJson(
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
     # Path to the custom icon image on your local machine
-    icon_path = r'streamlit_app/data/court-building.png'
+    icon_path = r'streamlit_app/data/courtspng.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(26, 26))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
@@ -441,10 +441,10 @@ folium.GeoJson(
 for idx, row in gdf.iterrows():
     popup_text = f"Location: {row['Location']}\nCapacity: {row['Capacity(In kWp)']} kWp"
        # Path to the custom icon image on your local machine
-    icon_path = r'streamlit_app/data/govt.build.png'
+    icon_path = r'streamlit_app/data/govt_B.png'
 
     # Define the custom icon
-    icon = folium.CustomIcon(icon_path, icon_size=(28, 28))  # You can adjust the size as needed
+    icon = folium.CustomIcon(icon_path, icon_size=(22, 22))  # You can adjust the size as needed
 
     # Create a marker with the custom icon
     folium.Marker(
