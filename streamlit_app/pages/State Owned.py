@@ -13,7 +13,7 @@ from branca.colormap import linear
 st.set_page_config(layout="wide")
 
 
-dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
+dfall = pd.read_csv(r'streamlit_app/data/All_Total_.csv')
 dfST=pd.read_csv(r'streamlit_app/data/SSL compiled report.csv')
 
 with open(r'streamlit_app/data/jhnew.geojson') as f:
