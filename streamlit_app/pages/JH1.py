@@ -111,4 +111,4 @@ with col3:
     st.metric(label="Rooftop Solar Capacity(kWp)", value=f"{sum_privatesolar_capacity} kWp")
     st.metric(label="Rooftop Solar Nos.", value=sum_private_rooftop_installations)
     st.metric(label="Utility-Grade capacity(kWp)", value=f"{sum_utility_Grade_Solar} kWp")
-    st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps
+    st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps)
