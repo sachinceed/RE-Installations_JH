@@ -113,18 +113,18 @@ with col1:
     st.metric(label=" ", value=f"{sum_offgrid_capacity} kWp")
 with col2:
     st.header('State Owned')
-    st.metric(label="Rooftop Solar Capacity (kWp)", value=f"{sum_rooftop_capacity} kWp", delta_color="yellow")
-    st.metric(label="Rooftop Solar Nos.", value=sum_rooftop_installations, delta_color="yellow")
-    st.metric(label="Minigrid capacity (kWp)", value=f"{sum_minigrid_capacity} kWp", delta_color="yellow")
+    st.metric(label="Rooftop Solar Capacity (kWp)", value=f"{sum_rooftop_capacity} kWp")
+    st.metric(label="Rooftop Solar Nos.", value=sum_rooftop_installations)
+    st.metric(label="Minigrid capacity (kWp)", value=f"{sum_minigrid_capacity} kWp")
     st.metric(label="Minigrid Solar (Nos.)", value=sum_households)
 
 # Column 3: Private Owned Metrics
 with col3:
     st.header('Private Owned')
-    st.metric(label="Rooftop Solar Capacity(kWp)", value=f"{sum_privatesolar_capacity} kWp", delta_color="yellow")
-    st.metric(label="Rooftop Solar Nos.", value=sum_private_rooftop_installations, delta_color="yellow")
-    st.metric(label="Utility-Grade capacity(kWp)", value=f"{sum_utility_Grade_Solar} kWp", delta_color="yellow")
-    st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps, delta_color="yellow")
+    st.metric(label="Rooftop Solar Capacity(kWp)", value=f"{sum_privatesolar_capacity} kWp")
+    st.metric(label="Rooftop Solar Nos.", value=sum_private_rooftop_installations)
+    st.metric(label="Utility-Grade capacity(kWp)", value=f"{sum_utility_Grade_Solar} kWp")
+    st.metric(label="Solar Water Pumps Nos.", value=sum_solar_pumps, delta_color="red")
 
 
 #st.header('Total Solar Capacity')
