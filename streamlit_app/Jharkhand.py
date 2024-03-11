@@ -27,7 +27,7 @@ st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 st.title('Renewable Energy Dashboard For The State of Jharkhand')
 
 # Read the CSV data
-dfall = pd.read_csv('streamlit_app/data/All_Total.csv')
+dfall = pd.read_csv('streamlit_app/data/All_Total_.csv')
 
 # Load GeoJSON data
 with open('streamlit_app/data/jhnew.geojson') as f:
@@ -95,6 +95,8 @@ sum_ongrid_capacity = int(filtered_dfall[['Grid_Connected_Rooftop_Solar_Capacity
 sum_offgrid_capacity = int(filtered_dfall[['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Solar_Streetlights_capacity']].sum().sum())
 sum_solar_street_lights = int(filtered_dfall['Solar_street_Lights'].sum())
 sum_solar_SL_capacity = int(filtered_dfall['Solar_Streetlights_capacity'].sum())
+sum_Hydro_power = int(filtered_dfall['Hydro_Power'].sum())
+sum_Bio_power = int(filtered_dfall['Bio_Power'].sum())
 #total_capacity=filtered_dfall['Capacity_Solar_Mini_Grid_Plant','SGM_Capacity','Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)']
 # Display metrics
 # Create three beta_columns
@@ -117,6 +119,8 @@ with col2:
     st.metric(label="Rooftop Solar Nos.", value=sum_rooftop_installations)
     st.metric(label="Minigrid capacity (kWp)", value=f"{sum_minigrid_capacity} kWp")
     st.metric(label="Minigrid Solar (Nos.)", value=sum_households)
+    st.metric(label="Bio Power Capacity", value=f"{sum_Bio_power}MW")
+    st.metric(label="Hydro Power Capacity ", value=f"{sum_Hydro_power}MW")
 
 # Column 3: Private Owned Metrics
 with col3:
