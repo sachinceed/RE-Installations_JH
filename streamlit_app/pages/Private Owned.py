@@ -19,7 +19,7 @@ st.subheader('ROOFTOP SOLAR')
 with open(r'streamlit_app/data/jhnew.geojson') as f:
     geojson_data = json.load(f)
 
-dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
+dfall = pd.read_csv(r'streamlit_app/data/All_Total_.csv')
 
 # Function to customize tooltip
 color_scale = linear.Greens_09.scale(dfall['Privatesolartotalcapacity'].min(), dfall['Privatesolartotalcapacity'].max())
