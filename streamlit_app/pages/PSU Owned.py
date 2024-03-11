@@ -57,7 +57,7 @@ m.options['scrollWheelZoom'] = False
 
 
 
-dfall = pd.read_csv(r'streamlit_app/data/All_Total.csv')
+dfall = pd.read_csv(r'streamlit_app/data/All_Total_.csv')
 dfDVC_sorted = dfall.sort_values(by='DVC_owned_Solar(kwp)', ascending=True)
 fig3 = px.bar(dfDVC_sorted, y='District', x='DVC_owned_Solar(kwp)',
              title='DVC Solar Installations in Jharkhand',
