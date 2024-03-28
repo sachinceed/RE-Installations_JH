@@ -102,7 +102,6 @@ st.header('MINI-GRID SOLAR')
 
 df4mgs=pd.read_csv(r"streamlit_app/data/Solar_Minigrid.csv")
 # Function to customize tooltip
-@st.cache_data
 color_scale = linear.Greens_09.scale(dfall['Capacity_Solar_Mini_Grid_Plant'].min(), dfall['Capacity_Solar_Mini_Grid_Plant'].max())
 def style_function(feature):
     return {
@@ -206,7 +205,6 @@ gdf['Category'] = gdf['Category'].astype('str')
 m1 = folium.Map(location=[23.6345, 85.3803], zoom_start=7,min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
-@st.cache_data
 def style_function(feature):
     return {
         'fillColor': '#10ef3b',
@@ -257,7 +255,6 @@ gdf['Category'] = gdf['Category'].astype('str')
 m2 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
-@st.cache_data
 def style_function(feature):
     return {
         'fillColor': '#10ef3b',
@@ -315,7 +312,6 @@ gdf['Category'] = gdf['Category'].astype('str')
 m3 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
-@st.cache_data
 def style_function(feature):
     return {
         'fillColor': '#10ef3b',
@@ -367,7 +363,6 @@ gdf['Category'] = gdf['Category'].astype('str')
 m4 = folium.Map(location=[23.6345, 85.3803], zoom_start=7, min_zoom=7, max_zoom=8, tiles='cartodb dark_matter', control_scale=True)
 
 # Function to customize tooltip
-@st.cache_data
 def style_function(feature):
     return {
         'fillColor': '#10ef3b',
