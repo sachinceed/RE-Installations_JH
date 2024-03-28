@@ -34,7 +34,6 @@ st.header('RENEWABLE ENERGY INSTALLATIONS IN JHARKHAND')
 st.subheader('Hover Over The Districts for More Information for RE Status in Jharkhand')
 st.header('ROOFTOP SOLAR')
 # Function to customize tooltip
-@st.cache_data
 color_scale = linear.Greens_09.scale(dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].min(), dfall['Grid_Connected_Rooftop_Solar_Capacity_Installed_(in_KWp)'].max())
 def style_function(feature):
     return {
