@@ -149,7 +149,6 @@ with row2:
 
 
 st.header('SOLAR STREET LIGHTS ')
-@st.cache_data
 color_scale = linear.Greens_09.scale(dfall['Solar_Streetlights'].min(), dfall['Solar_Streetlights'].max())
 def style_function(feature):
     return {
