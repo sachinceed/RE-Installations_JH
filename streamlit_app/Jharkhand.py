@@ -17,12 +17,26 @@ link = "https://ceedindia.org/"
 
 # Use st.sidebar.markdown to embed an HTML link with the image
 #st.sidebar.markdown(f'<a href="{link}" target="_blank"><img src="{imagePath}" width="50" alt="Sidebar Image"></a>', unsafe_allow_html=True)
-st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
+#st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 #st.sidebar.markdown(f'[![Image]({image_path})]({link})')
 
+# Add the image to the sidebar
+st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 
-
-
+# Add custom CSS to adjust the position of the image
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Adjust this value to 'flex-start' or 'flex-end' to move the image */
+        align-items: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title('Renewable Energy Dashboard For The State of Jharkhand')
 
