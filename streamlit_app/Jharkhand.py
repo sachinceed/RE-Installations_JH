@@ -5,7 +5,7 @@ import folium
 import json
 import branca.colormap as cm
 from streamlit_folium import folium_static
-
+from streamlit_extras.app_logo import add_logo
 
 # Set Streamlit page title and header
 st.set_page_config(page_title='Renewable Energy Dashboard',layout="wide")
@@ -19,9 +19,9 @@ link = "https://ceedindia.org/"
 #st.sidebar.markdown(f'<a href="{link}" target="_blank"><img src="{imagePath}" width="50" alt="Sidebar Image"></a>', unsafe_allow_html=True)
 #st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 #st.sidebar.markdown(f'[![Image]({image_path})]({link})')
-
+add_logo("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 # Add the image to the sidebar
-st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
+#st.sidebar.image("streamlit_app/data/Jharkhand_Rajakiya_Chihna.svg2.png")
 
 # Add custom CSS to adjust the position of the image
 st.markdown(
