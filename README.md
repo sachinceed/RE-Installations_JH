@@ -1,6 +1,6 @@
 Welcome to The Dashboard For RE(Renewable Energy) Dashboard for the State of Jharkhand,
-This Dashboard is Developed and maintained By 
-Mr. Sachin Pratap, Data Analyst @ CEEDIndia ( https://ceedindia.org/team/sachin-pratap/ )
+This Dashboard is Developed and Maintained By 
+Mr. Sachin Pratap, Research Associate @ CEEDIndia ( https://ceedindia.org/team/sachin-pratap/ )
 LinkedIn :- https://www.linkedin.com/in/sachin-pratap-723b961a3/
 
 For Live Demo Follow The Link: https://renewable-energy-installations-jharkhand.streamlit.app/
