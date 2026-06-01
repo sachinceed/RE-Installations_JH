@@ -6,4 +6,3 @@ plotly
 folium
 streamlit_folium
 json5
-fiona
